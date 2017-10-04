@@ -43,7 +43,7 @@ width:738px;
 #headerTitle
 {
 position:relative;
-left:30px;
+left:0px;
 top:30px;
 color:#283823;
 text-align:left;
@@ -55,7 +55,7 @@ font-family:Arial, Helvetica, sans-serif;
 #headerSubText
 {
 position:relative;
-left:33px;
+left:0px;
 top:30px;
 color:#679159;
 text-align:left;
