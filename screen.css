@@ -55,7 +55,7 @@ font-family:Arial, Helvetica, sans-serif;
 #headerSubText
 {
 position:relative;
-left:80px;
+left:0px;
 top:30px;
 color:#679159;
 text-align:left;
@@ -122,8 +122,6 @@ font-style:italic;
 .contentText
 {
 width:680px;
-padding-left:30px;
-padding-right:30px;
 font-size:13px;
 color:#030712;
 line-height:30px;
