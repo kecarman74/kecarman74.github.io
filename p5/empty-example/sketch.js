@@ -2,7 +2,7 @@ var j, k, x, y = global
 var j = 0;
 
 function setup() {
-  createCanvas(800, 600);
+  createCanvas(1600, 700);
 }
 
 function draw() {
