@@ -149,3 +149,6 @@ color:#152413;
 padding-top:38px;
 }
 
+table, th, td {
+   border: 1px solid black;
+}
