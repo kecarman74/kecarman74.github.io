@@ -51,7 +51,7 @@ print('input guess as a four character string, only the first four count.')
 print(' r=red g=green b=blue p=purple e.g. rrgb')
 while h < 11:
     i, j, k = 0, 0, 0
-    gi = [ci[0], ci[1], ci[2], ci[3]] 
+    gi = ci[:] 
     US = input('Your Guess?')
     ui = [US[0], US[1], US[2], US[3]]
     if (ui[0] not in cl) or (ui[1] not in cl) or (ui[2] not in cl) or (ui[3] not in cl):
