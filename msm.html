@@ -44,34 +44,38 @@ Released   : 20081222
         <p>&nbsp;</p>
         <textarea rows="30" cols="90">
 import random as ran
-h = 0
-cl = ['r', 'g', 'b', 'p']
-ci = [ran.choice(cl), ran.choice(cl), ran.choice(cl), ran.choice(cl)]
-print('input guess as a four character string, only the first four count.')
-print(' r=red g=green b=blue p=purple e.g. rrgb')
-while h < 11:
-    i, j, k = 0, 0, 0
-    gi = ci[:] 
-    US = input('Your Guess?')
-    ui = [US[0], US[1], US[2], US[3]]
-    if (ui[0] not in cl) or (ui[1] not in cl) or (ui[2] not in cl) or (ui[3] not in cl):
-        print('Invalid Input, Try Again.')
-    elif ci == ui:
-        print('Match! You Win!')
-        h = 11
-    else:
-        for j in range(4):
-            if ui[j] == gi[j]:
-                gi[j] = 0
-                k = k + 1
-            else:
-                if ui[j] in gi:
-                    gi[gi.index(ui[j])] = 0
-                    i = i + 1          
-        print( k, 'In the correct position, correct color.')
-        print( i, 'Correct color, wrong position.')
-        h = h + 1
-        print(10 - h, 'Guesses Remaining')
+z = 1
+while z == 1:
+    h = 0
+    cl = ['r', 'g', 'b', 'p']
+    ci = [ran.choice(cl), ran.choice(cl), ran.choice(cl), ran.choice(cl)]
+    print('input guess as a four character string, only the first four count.')
+    print(' r=red g=green b=blue p=purple e.g. rrgb')
+    while h < 11:
+        i, j, k = 0, 0, 0
+        gi = ci[:]
+        US = input('Your Guess?')
+        ui = [US[0], US[1], US[2], US[3]]
+        if (ui[0] not in cl) or (ui[1] not in cl) or (ui[2] not in cl) or (ui[3] not in cl):
+            print('Invalid Input, Try Again.')
+        elif ci == ui:
+            print('Match! You Win!')
+            h = 11
+        else:
+            for j in range(4):
+                if ui[j] == gi[j]:
+                    gi[j] = 0
+                    k = k + 1
+                else:
+                    if ui[j] in gi:
+                        gi[gi.index(ui[j])] = 0
+                        i = i + 1          
+            print( k, 'In the correct position, correct color.')
+            print( i, 'Correct color, wrong position.')
+            h = h + 1
+            print(10 - h, 'Guesses Remaining')
+    print("Play again?")
+    z = int(input("Type 0=No 1=Yes "))
         </textarea>
         <p>&nbsp;</p>
       </div>
