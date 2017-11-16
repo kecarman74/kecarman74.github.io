@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+ <!--
+Design by Bryant Smith
+http://www.bryantsmith.com
+http://www.aszx.net
+email: template [-at-] bryantsmith [-dot-] com
+Released under Creative Commons Attribution 2.5 Generic.  In other words, do with it what you please; but please leave the link if you'd be so kind :)
+
+Name       : Green Creative
+Description: One column, with top naviagation
+Version    : 1.0
+Released   : 20081222
+-->
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="screen.css" />
+<title>Kevin Carman Github Wiki</title>
+</head>
+
+<body>
+    <div id="page">
+    
+        <div id="header">
+          <div id="headerTitle">Kevin Carman</div>
+            <div id="headerSubText">Github Wiki for CIS160.</div>
+            
+        </div>
+        <div id="bar">
+           <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="scratch.html">Scratch</a>
+            <a href="homework.html">Homework</a>
+            <a href="appinventor.html">App Inventor</a>
+            <a href="colleges.html">College Research</a>
+            <!--<a href="#">contact</a>-->
+      </div>
+      <div class="contentTitle"><h1>C++ Fun</h1></div>
+      <div class="contentText">
+        <p>Here are the bit operators we used in C++.</p>
+        <p>&nbsp;</p>
+        <textarea rows="30" cols="90">
+// Example program
+#include <iostream>
+#include <string>
+
+void printBits(int num) {
+    int intBits = sizeof(int) * 8;
+    printf("i is %d\n", num);
+    unsigned int mask = 1 << (intBits - 1);
+    
+    for (int bit = intBits; bit >= 1; bit -= 1) {
+        int result = (num & mask) ? 1 : 0;
+        printf("%d", result);
+        mask >>= 1;
+    }
+    printf("\n");
+}
+
+int main()
+{
+    
+    // i = 5;
+    unsigned int i = 5;
+    printBits(i);
+    
+    // complement i
+    i = ~i;
+    printBits(i);
+   
+    i = 0;
+    i = ~i;
+    i = i + 1;
+    printBits(i);
+    
+    i = 5;
+    i = i<<1;
+    printBits(i);
+    
+    i = 5;
+    i = i>>1;
+    printBits(i);
+    
+    
+}
+
+        </textarea>
+        <p>&nbsp;</p>
+      </div>
+</div>
+        <div id="footer"></div> 
+</body>
+</html>
+
