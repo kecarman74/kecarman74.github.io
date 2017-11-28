@@ -40,7 +40,8 @@ Released   : 20081222
       </div>
       <div class="contentTitle"><h1>Python Mastermind</h1></div>
       <div class="contentText">
-        <p>This is the mastermind program I wrote in Python.</p>
+        <p>This is the hangman program I wrote in Python.</p>
+        <a href="https://www.screencast.com/t/lu79a84kGY47">Click Here to See A Video of the Program Running</a>
         <p>&nbsp;</p>
         <textarea rows="30" cols="90">
 import random as ran 
@@ -124,7 +125,6 @@ while p > 0:
 
     while misses < 6:
         j = input("Guess a letter?   ")
-        print(type(j));
         if len(j) != 1:
             print("Invalid Input, Try Again");
         else:

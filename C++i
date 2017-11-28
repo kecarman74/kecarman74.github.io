@@ -26,8 +26,6 @@ int main()
     i = ~i;
     printBits(i);
    
-    
-
     i = 0;
     i = ~i;
     i = i + 1;
