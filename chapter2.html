@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+ <!--
+Design by Bryant Smith
+http://www.bryantsmith.com
+http://www.aszx.net
+email: template [-at-] bryantsmith [-dot-] com
+Released under Creative Commons Attribution 2.5 Generic.  In other words, do with it what you please; but please leave the link if you'd be so kind :)
+
+Name       : Green Creative
+Description: One column, with top naviagation
+Version    : 1.0
+Released   : 20081222
+-->
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="screen.css" />
+<title>Kevin Carman Github Wiki</title>
+</head>
+
+<body>
+    <div id="page">
+    
+        <div id="header">
+          <div id="headerTitle">Kevin Carman</div>
+            <div id="headerSubText">Github Wiki for CS161.</div>
+            
+        </div>
+        <div id="bar">
+          <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="homework.html">Homework</a>
+            <a href="reading.html">Reading</a>
+            <!--<a href="#">contact</a>-->
+      </div>
+        
+        <div class="contentTitle"><h1>Deitel Text Exercises, Chapter 2</h1></div>
+        <div class="contentText">
+          <pre style='color:#d1d1d1;background:#000000;'><span style='color:#9999a9; '>//2.16</span>
+<span style='color:#e66170; font-weight:bold; '>int</span> <span style='color:#e66170; font-weight:bold; '>main</span><span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span>
+<span style='color:#b060b0; '>{</span>
+    <span style='color:#e66170; font-weight:bold; '>int</span> num1<span style='color:#b060b0; '>{</span><span style='color:#008c00; '>0</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>int</span> num2<span style='color:#b060b0; '>{</span><span style='color:#008c00; '>0</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Please Enter Two Ints: </span><span style='color:#02d045; '>"</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cin</span> <span style='color:#d2cd86; '>></span><span style='color:#d2cd86; '>></span> num1 <span style='color:#d2cd86; '>></span><span style='color:#d2cd86; '>></span> num2<span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Sum</span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#00c4c4; '>' '</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> num1 <span style='color:#d2cd86; '>+</span> num2 <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Product</span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#00c4c4; '>' '</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> num1 <span style='color:#d2cd86; '>*</span> num2 <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Difference</span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#00c4c4; '>' '</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> num1 <span style='color:#d2cd86; '>-</span> num2 <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Quotient</span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#00c4c4; '>' '</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> num1 <span style='color:#d2cd86; '>/</span> num2 <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span> <span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>return</span> <span style='color:#008c00; '>0</span><span style='color:#b060b0; '>;</span>
+<span style='color:#b060b0; '>}</span>
+<span style='color:#9999a9; '>//2.17</span>
+<span style='color:#e66170; font-weight:bold; '>int</span> second<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+    <span style='color:#9999a9; '>// a</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '> 1 2 3 4</span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#9999a9; '>//b</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>1 </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>2 </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>3 </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>4 </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#9999a9; '>//c</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>1 </span><span style='color:#02d045; '>"</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>2 </span><span style='color:#02d045; '>"</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>3 </span><span style='color:#02d045; '>"</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>4 </span><span style='color:#02d045; '>"</span><span style='color:#b060b0; '>;</span>
+
+    <span style='color:#e66170; font-weight:bold; '>return</span> <span style='color:#008c00; '>0</span><span style='color:#b060b0; '>;</span>
+<span style='color:#9999a9; '>//2.18</span>
+<span style='color:#e66170; font-weight:bold; '>int</span> <span style='color:#e66170; font-weight:bold; '>main</span><span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span>
+<span style='color:#b060b0; '>{</span>
+    <span style='color:#e66170; font-weight:bold; '>int</span> num1<span style='color:#b060b0; '>{</span><span style='color:#008c00; '>0</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>int</span> num2<span style='color:#b060b0; '>{</span><span style='color:#008c00; '>0</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Please Enter Two Ints: </span><span style='color:#02d045; '>"</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cin</span> <span style='color:#d2cd86; '>></span><span style='color:#d2cd86; '>></span> num1 <span style='color:#d2cd86; '>></span><span style='color:#d2cd86; '>></span> num2<span style='color:#b060b0; '>;</span>
+
+    <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>num1 <span style='color:#d2cd86; '>></span> num2<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+        <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> num1 <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#00c4c4; '>' '</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Is Larger Than </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> num2 <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span>
+    <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>num1 <span style='color:#d2cd86; '>&lt;</span> num2<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+        <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> num2 <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#00c4c4; '>' '</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Is Larger Than </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> num1 <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span>
+    <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>num1 <span style='color:#d2cd86; '>=</span><span style='color:#d2cd86; '>=</span> num2<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+        <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> num1 <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#00c4c4; '>' '</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Is Equal To </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> num2 <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span>
+    <span style='color:#e66170; font-weight:bold; '>return</span> <span style='color:#008c00; '>0</span><span style='color:#b060b0; '>;</span>
+<span style='color:#b060b0; '>}</span>
+<span style='color:#9999a9; '>//2.19</span>
+<span style='color:#e66170; font-weight:bold; '>int</span> <span style='color:#e66170; font-weight:bold; '>main</span><span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span>
+<span style='color:#b060b0; '>{</span>
+    <span style='color:#e66170; font-weight:bold; '>int</span> num1<span style='color:#b060b0; '>{</span><span style='color:#008c00; '>0</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>int</span> num2<span style='color:#b060b0; '>{</span><span style='color:#008c00; '>0</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>int</span> num3<span style='color:#b060b0; '>{</span><span style='color:#008c00; '>0</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>int</span> mx<span style='color:#b060b0; '>{</span><span style='color:#008c00; '>0</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>int</span> mn<span style='color:#b060b0; '>{</span><span style='color:#008c00; '>0</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Please Enter Three Ints: </span><span style='color:#02d045; '>"</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cin</span> <span style='color:#d2cd86; '>></span><span style='color:#d2cd86; '>></span> num1 <span style='color:#d2cd86; '>></span><span style='color:#d2cd86; '>></span> num2 <span style='color:#d2cd86; '>></span><span style='color:#d2cd86; '>></span> num3<span style='color:#b060b0; '>;</span>
+     mx <span style='color:#d2cd86; '>=</span> num1<span style='color:#b060b0; '>;</span>
+     mn <span style='color:#d2cd86; '>=</span> num2<span style='color:#b060b0; '>;</span>
+
+    <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>num1 <span style='color:#d2cd86; '>&lt;</span> num2<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+        mx <span style='color:#d2cd86; '>=</span> num2<span style='color:#b060b0; '>;</span>
+        mn <span style='color:#d2cd86; '>=</span> num1<span style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span>
+    <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>mx <span style='color:#d2cd86; '>&lt;</span> num3<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+        mx <span style='color:#d2cd86; '>=</span> num3<span style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span>
+    <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>mn <span style='color:#d2cd86; '>></span> num3<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+        mn <span style='color:#d2cd86; '>=</span> num3<span style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Sum is </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> num1 <span style='color:#d2cd86; '>+</span> num2 <span style='color:#d2cd86; '>+</span> num3 <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Average is </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#d2cd86; '>(</span>num1 <span style='color:#d2cd86; '>+</span> num2 <span style='color:#d2cd86; '>+</span> num3<span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>/</span> <span style='color:#008c00; '>3</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Product is </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> num1 <span style='color:#d2cd86; '>*</span> num2 <span style='color:#d2cd86; '>*</span> num3 <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Largest is </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> mx <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Smallest is </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> mn <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+<span style='color:#b060b0; '>}</span>
+<span style='color:#9999a9; '>//2.20</span>
+<span style='color:#e66170; font-weight:bold; '>int</span> <span style='color:#e66170; font-weight:bold; '>main</span><span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span>
+<span style='color:#b060b0; '>{</span>
+    <span style='color:#e66170; font-weight:bold; '>int</span> rad<span style='color:#b060b0; '>{</span><span style='color:#008c00; '>0</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>double</span> pi<span style='color:#b060b0; '>{</span><span style='color:#009f00; '>3.14159</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Please Enter Circle Radius: </span><span style='color:#02d045; '>"</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cin</span> <span style='color:#d2cd86; '>></span><span style='color:#d2cd86; '>></span> rad<span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Diameter: </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#008c00; '>2</span> <span style='color:#d2cd86; '>*</span> rad <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Circumference: </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#008c00; '>2</span> <span style='color:#d2cd86; '>*</span> pi <span style='color:#d2cd86; '>*</span> rad <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Area: </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> pi <span style='color:#d2cd86; '>*</span> <span style='color:#d2cd86; '>(</span>rad <span style='color:#d2cd86; '>*</span> rad<span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+
+<span style='color:#b060b0; '>}</span>
+<span style='color:#9999a9; '>//2.28</span>
+<span style='color:#e66170; font-weight:bold; '>int</span> <span style='color:#e66170; font-weight:bold; '>main</span><span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span>
+<span style='color:#b060b0; '>{</span>
+    <span style='color:#e66170; font-weight:bold; '>int</span> num<span style='color:#b060b0; '>{</span><span style='color:#008c00; '>0</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>int</span> num1<span style='color:#b060b0; '>{</span><span style='color:#008c00; '>0</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>int</span> num2<span style='color:#b060b0; '>{</span><span style='color:#008c00; '>0</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>int</span> num3<span style='color:#b060b0; '>{</span><span style='color:#008c00; '>0</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>int</span> num4<span style='color:#b060b0; '>{</span><span style='color:#008c00; '>0</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>int</span> num5<span style='color:#b060b0; '>{</span><span style='color:#008c00; '>0</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Please Enter a 5 Digit Int: </span><span style='color:#02d045; '>"</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cin</span> <span style='color:#d2cd86; '>></span><span style='color:#d2cd86; '>></span> num<span style='color:#b060b0; '>;</span>
+    num1 <span style='color:#d2cd86; '>=</span> num <span style='color:#d2cd86; '>%</span> <span style='color:#008c00; '>10</span><span style='color:#b060b0; '>;</span>
+    num2 <span style='color:#d2cd86; '>=</span> <span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>(</span>num <span style='color:#d2cd86; '>-</span> num1<span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>%</span> <span style='color:#008c00; '>100</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>/</span> <span style='color:#008c00; '>10</span><span style='color:#b060b0; '>;</span>
+    num3 <span style='color:#d2cd86; '>=</span> <span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>(</span>num <span style='color:#d2cd86; '>-</span> num1 <span style='color:#d2cd86; '>-</span> num2<span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>%</span> <span style='color:#008c00; '>1000</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>/</span> <span style='color:#008c00; '>100</span><span style='color:#b060b0; '>;</span>
+    num4 <span style='color:#d2cd86; '>=</span> <span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>(</span>num <span style='color:#d2cd86; '>-</span> num1 <span style='color:#d2cd86; '>-</span> num2 <span style='color:#d2cd86; '>-</span> num3<span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>%</span> <span style='color:#008c00; '>10000</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>/</span> <span style='color:#008c00; '>1000</span><span style='color:#b060b0; '>;</span>
+    num5 <span style='color:#d2cd86; '>=</span> <span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>(</span>num <span style='color:#d2cd86; '>-</span> num1 <span style='color:#d2cd86; '>-</span> num2 <span style='color:#d2cd86; '>-</span> num3 <span style='color:#d2cd86; '>-</span> num4<span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>%</span> <span style='color:#008c00; '>100000</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>/</span> <span style='color:#008c00; '>10000</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> num5 <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#00c4c4; '>' '</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> num4 <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#00c4c4; '>' '</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> num3 <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#00c4c4; '>' '</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> num2 <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#00c4c4; '>' '</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> num1<span style='color:#b060b0; '>;</span>
+
+<span style='color:#b060b0; '>}</span>
+<span style='color:#9999a9; '>//2.30</span>
+<span style='color:#e66170; font-weight:bold; '>int</span> <span style='color:#e66170; font-weight:bold; '>main</span><span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span>
+<span style='color:#b060b0; '>{</span>
+    <span style='color:#e66170; font-weight:bold; '>int</span> htin<span style='color:#b060b0; '>{</span><span style='color:#008c00; '>0</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>int</span> wtlb<span style='color:#b060b0; '>{</span><span style='color:#008c00; '>0</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Please Enter Height in Inches: </span><span style='color:#02d045; '>"</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cin</span> <span style='color:#d2cd86; '>></span><span style='color:#d2cd86; '>></span> htin<span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Please Enter Weight in Pounds: </span><span style='color:#02d045; '>"</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cin</span> <span style='color:#d2cd86; '>></span><span style='color:#d2cd86; '>></span> wtlb<span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#00c4c4; '>' '</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>BMI= </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#d2cd86; '>(</span>wtlb <span style='color:#d2cd86; '>*</span> <span style='color:#008c00; '>703</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>/</span> <span style='color:#d2cd86; '>(</span>htin <span style='color:#d2cd86; '>*</span> htin<span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#00c4c4; '>' '</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>BMI Values </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Underweight: Less Than 18.5</span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Normal: Between 18.5 and 24.9</span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Overweight: Between 25 and 29.9</span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Obese: 30 or Greater</span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+
+<span style='color:#b060b0; '>}</span>
+</pre>
+          <p>&nbsp;</p>
+          <div class="contentText">
+        </div>
+</div>
+        <div id="footer"></div> 
+</body>
+</html>
