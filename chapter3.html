@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+ <!--
+Design by Bryant Smith
+http://www.bryantsmith.com
+http://www.aszx.net
+email: template [-at-] bryantsmith [-dot-] com
+Released under Creative Commons Attribution 2.5 Generic.  In other words, do with it what you please; but please leave the link if you'd be so kind :)
+
+Name       : Green Creative
+Description: One column, with top naviagation
+Version    : 1.0
+Released   : 20081222
+-->
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="screen.css" />
+<title>Kevin Carman Github Wiki</title>
+</head>
+
+<body>
+    <div id="page">
+    
+        <div id="header">
+          <div id="headerTitle">Kevin Carman</div>
+            <div id="headerSubText">Github Wiki for CS161.</div>
+            
+        </div>
+        <div id="bar">
+          <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="homework.html">Homework</a>
+            <a href="reading.html">Reading</a>
+            <!--<a href="#">contact</a>-->
+      </div>
+        
+        <div class="contentTitle"><h1>Deitel Text Exercises, Chapter 3</h1></div>
+        <div class="contentText">
+          <pre style='color:#d1d1d1;background:#000000;'><span style='color:#008073; '>#</span><span style='color:#008073; '>include </span><span style='color:#02d045; '>&lt;</span><span style='color:#40015a; '>iostream</span><span style='color:#02d045; '>></span>
+<span style='color:#008073; '>#</span><span style='color:#008073; '>include </span><span style='color:#02d045; '>&lt;</span><span style='color:#40015a; '>string</span><span style='color:#02d045; '>></span>
+
+<span style='color:#e66170; font-weight:bold; '>using</span> <span style='color:#e66170; font-weight:bold; '>namespace</span> <span style='color:#00dddd; '>std</span><span style='color:#b060b0; '>;</span>
+
+<span style='color:#9999a9; '>//3.9</span>
+<span style='color:#e66170; font-weight:bold; '>class</span> Account <span style='color:#b060b0; '>{</span>
+<span style='color:#e34adc; '>&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#e66170; font-weight:bold; '>public</span><span style='color:#e34adc; '>:</span>
+        Account<span style='color:#d2cd86; '>(</span><span style='color:#00dddd; '>std</span><span style='color:#b060b0; '>::</span><span style='color:#e66170; font-weight:bold; '>string</span> acctName<span style='color:#d2cd86; '>)</span><span style='color:#9999a9; '>//constructor</span>
+        <span style='color:#b060b0; '>:</span> name<span style='color:#b060b0; '>{</span>acctName<span style='color:#b060b0; '>}</span><span style='color:#d2cd86; '>,</span> balance<span style='color:#b060b0; '>{</span><span style='color:#009f00; '>0.00</span><span style='color:#b060b0; '>}</span> <span style='color:#b060b0; '>{</span><span style='color:#b060b0; '>}</span> <span style='color:#9999a9; '>//initializer list</span>
+
+        <span style='color:#00dddd; '>std</span><span style='color:#b060b0; '>::</span><span style='color:#e66170; font-weight:bold; '>string</span> getName<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#e66170; font-weight:bold; '>const</span> <span style='color:#b060b0; '>{</span> <span style='color:#9999a9; '>//const means changes cannot be made</span>
+            <span style='color:#e66170; font-weight:bold; '>return</span> name<span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+        <span style='color:#e66170; font-weight:bold; '>double</span> getBalance<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#e66170; font-weight:bold; '>const</span> <span style='color:#b060b0; '>{</span>
+            <span style='color:#e66170; font-weight:bold; '>return</span> balance<span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+        <span style='color:#e66170; font-weight:bold; '>void</span> deposit<span style='color:#d2cd86; '>(</span><span style='color:#e66170; font-weight:bold; '>double</span> depAmt<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+            <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>depAmt <span style='color:#d2cd86; '>></span> <span style='color:#009f00; '>0.00</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>{</span>
+                balance <span style='color:#d2cd86; '>+</span><span style='color:#d2cd86; '>=</span> depAmt<span style='color:#b060b0; '>;</span>
+            <span style='color:#b060b0; '>}</span>
+        <span style='color:#b060b0; '>}</span>
+        <span style='color:#e66170; font-weight:bold; '>void</span> withdraw<span style='color:#d2cd86; '>(</span><span style='color:#e66170; font-weight:bold; '>double</span> witAmt<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+            <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>witAmt <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>=</span> balance<span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>{</span>
+                balance <span style='color:#d2cd86; '>-</span><span style='color:#d2cd86; '>=</span> witAmt<span style='color:#b060b0; '>;</span>
+            <span style='color:#b060b0; '>}</span>
+                <span style='color:#e66170; font-weight:bold; '>else</span> <span style='color:#b060b0; '>{</span>
+                    <span style='color:#00dddd; '>std</span><span style='color:#b060b0; '>::</span><span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Insufficient Funds</span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#00dddd; '>std</span><span style='color:#b060b0; '>::</span><span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+                <span style='color:#b060b0; '>}</span>
+        <span style='color:#b060b0; '>}</span>
+
+<span style='color:#e34adc; '>&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#e66170; font-weight:bold; '>private</span><span style='color:#e34adc; '>:</span>
+        <span style='color:#00dddd; '>std</span><span style='color:#b060b0; '>::</span><span style='color:#e66170; font-weight:bold; '>string</span> name<span style='color:#b060b0; '>{</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+        <span style='color:#e66170; font-weight:bold; '>double</span> balance<span style='color:#b060b0; '>{</span><span style='color:#009f00; '>0.00</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+
+<span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+
+<span style='color:#9999a9; '>//3.10</span>
+<span style='color:#e66170; font-weight:bold; '>class</span> Invoice <span style='color:#b060b0; '>{</span>
+<span style='color:#e34adc; '>&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#e66170; font-weight:bold; '>public</span><span style='color:#e34adc; '>:</span>
+        Invoice<span style='color:#d2cd86; '>(</span><span style='color:#00dddd; '>std</span><span style='color:#b060b0; '>::</span><span style='color:#e66170; font-weight:bold; '>string</span> partNo<span style='color:#d2cd86; '>,</span> <span style='color:#00dddd; '>std</span><span style='color:#b060b0; '>::</span><span style='color:#e66170; font-weight:bold; '>string</span> partDescr<span style='color:#d2cd86; '>,</span> <span style='color:#e66170; font-weight:bold; '>int</span> partQuant<span style='color:#d2cd86; '>,</span> <span style='color:#e66170; font-weight:bold; '>double</span> partPrice <span style='color:#d2cd86; '>)</span><span style='color:#9999a9; '>//constructor</span>
+        <span style='color:#b060b0; '>:</span> pn<span style='color:#b060b0; '>{</span>partNo<span style='color:#b060b0; '>}</span><span style='color:#d2cd86; '>,</span> descr<span style='color:#b060b0; '>{</span>partDescr<span style='color:#b060b0; '>}</span><span style='color:#d2cd86; '>,</span> quant<span style='color:#d2cd86; '>(</span>partQuant<span style='color:#d2cd86; '>)</span><span style='color:#d2cd86; '>,</span> price<span style='color:#d2cd86; '>(</span>partPrice<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span><span style='color:#b060b0; '>}</span> <span style='color:#9999a9; '>//initializer list</span>
+
+        <span style='color:#00dddd; '>std</span><span style='color:#b060b0; '>::</span><span style='color:#e66170; font-weight:bold; '>string</span> getPartNo<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#e66170; font-weight:bold; '>const</span> <span style='color:#b060b0; '>{</span> <span style='color:#9999a9; '>//const means changes cannot be made</span>
+            <span style='color:#e66170; font-weight:bold; '>return</span> pn<span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+        <span style='color:#00dddd; '>std</span><span style='color:#b060b0; '>::</span><span style='color:#e66170; font-weight:bold; '>string</span> getPartDescr<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#e66170; font-weight:bold; '>const</span> <span style='color:#b060b0; '>{</span> <span style='color:#9999a9; '>//const means changes cannot be made</span>
+            <span style='color:#e66170; font-weight:bold; '>return</span> descr<span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+        <span style='color:#e66170; font-weight:bold; '>int</span> getPartQuant<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#e66170; font-weight:bold; '>const</span> <span style='color:#b060b0; '>{</span> <span style='color:#9999a9; '>//const means changes cannot be made</span>
+            <span style='color:#e66170; font-weight:bold; '>return</span> quant<span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+        <span style='color:#e66170; font-weight:bold; '>double</span> getPartPrice<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#e66170; font-weight:bold; '>const</span> <span style='color:#b060b0; '>{</span> <span style='color:#9999a9; '>//const means changes cannot be made</span>
+            <span style='color:#e66170; font-weight:bold; '>return</span> price<span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+        <span style='color:#e66170; font-weight:bold; '>void</span> setPartNo<span style='color:#d2cd86; '>(</span><span style='color:#00dddd; '>std</span><span style='color:#b060b0; '>::</span><span style='color:#e66170; font-weight:bold; '>string</span> newPartNo<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+            pn <span style='color:#d2cd86; '>=</span> newPartNo<span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+        <span style='color:#e66170; font-weight:bold; '>void</span> setPartDescr<span style='color:#d2cd86; '>(</span><span style='color:#00dddd; '>std</span><span style='color:#b060b0; '>::</span><span style='color:#e66170; font-weight:bold; '>string</span> newPartDescr<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+            descr <span style='color:#d2cd86; '>=</span> newPartDescr<span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+        <span style='color:#e66170; font-weight:bold; '>void</span> setPartQuant<span style='color:#d2cd86; '>(</span><span style='color:#e66170; font-weight:bold; '>int</span> newQuant<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+            <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>newQuant <span style='color:#d2cd86; '>></span><span style='color:#d2cd86; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>{</span>
+                quant <span style='color:#d2cd86; '>=</span> newQuant<span style='color:#b060b0; '>;</span>
+            <span style='color:#b060b0; '>}</span>
+        <span style='color:#b060b0; '>}</span>
+        <span style='color:#e66170; font-weight:bold; '>void</span> setPartPrice<span style='color:#d2cd86; '>(</span><span style='color:#e66170; font-weight:bold; '>int</span> newPrice<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+            <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>newPrice <span style='color:#d2cd86; '>></span><span style='color:#d2cd86; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>{</span>
+                price <span style='color:#d2cd86; '>=</span> newPrice<span style='color:#b060b0; '>;</span>
+            <span style='color:#b060b0; '>}</span>
+        <span style='color:#b060b0; '>}</span>
+        <span style='color:#e66170; font-weight:bold; '>double</span> getInvoiceAmount<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+            <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>quant <span style='color:#d2cd86; '>&lt;</span> <span style='color:#008c00; '>0</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+                quant <span style='color:#d2cd86; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#b060b0; '>}</span>
+            <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>price <span style='color:#d2cd86; '>&lt;</span> <span style='color:#008c00; '>0</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+                price <span style='color:#d2cd86; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#b060b0; '>}</span>
+            <span style='color:#e66170; font-weight:bold; '>return</span> quant <span style='color:#d2cd86; '>*</span> price<span style='color:#b060b0; '>;</span>
+
+        <span style='color:#b060b0; '>}</span>
+
+<span style='color:#e34adc; '>&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#e66170; font-weight:bold; '>private</span><span style='color:#e34adc; '>:</span>
+        <span style='color:#00dddd; '>std</span><span style='color:#b060b0; '>::</span><span style='color:#e66170; font-weight:bold; '>string</span> pn<span style='color:#b060b0; '>{</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+        <span style='color:#00dddd; '>std</span><span style='color:#b060b0; '>::</span><span style='color:#e66170; font-weight:bold; '>string</span> descr<span style='color:#b060b0; '>{</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+        <span style='color:#e66170; font-weight:bold; '>int</span> quant<span style='color:#b060b0; '>{</span><span style='color:#008c00; '>0</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+        <span style='color:#e66170; font-weight:bold; '>double</span> price<span style='color:#b060b0; '>{</span><span style='color:#009f00; '>0.00</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+
+<span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+
+<span style='color:#9999a9; '>//3.12</span>
+<span style='color:#e66170; font-weight:bold; '>class</span> Date <span style='color:#b060b0; '>{</span>
+<span style='color:#e34adc; '>&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#e66170; font-weight:bold; '>public</span><span style='color:#e34adc; '>:</span>
+    Date<span style='color:#d2cd86; '>(</span><span style='color:#e66170; font-weight:bold; '>int</span> day<span style='color:#d2cd86; '>,</span> <span style='color:#e66170; font-weight:bold; '>int</span> month<span style='color:#d2cd86; '>,</span> <span style='color:#e66170; font-weight:bold; '>int</span> year<span style='color:#d2cd86; '>)</span>
+    <span style='color:#b060b0; '>:</span> dd<span style='color:#b060b0; '>{</span>day<span style='color:#b060b0; '>}</span><span style='color:#d2cd86; '>,</span> mm<span style='color:#b060b0; '>{</span>month<span style='color:#b060b0; '>}</span><span style='color:#d2cd86; '>,</span> yyyy<span style='color:#b060b0; '>{</span>year<span style='color:#b060b0; '>}</span> <span style='color:#b060b0; '>{</span><span style='color:#b060b0; '>}</span>
+
+    <span style='color:#e66170; font-weight:bold; '>int</span> getDay<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+        <span style='color:#e66170; font-weight:bold; '>return</span> dd<span style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span>
+
+    <span style='color:#e66170; font-weight:bold; '>int</span> getMonth<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+        <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>(</span>mm <span style='color:#d2cd86; '>&lt;</span> <span style='color:#008c00; '>1</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>|</span><span style='color:#d2cd86; '>|</span> <span style='color:#d2cd86; '>(</span>mm <span style='color:#d2cd86; '>></span> <span style='color:#008c00; '>12</span><span style='color:#d2cd86; '>)</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+            mm <span style='color:#d2cd86; '>=</span> <span style='color:#008c00; '>1</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span>
+
+        <span style='color:#e66170; font-weight:bold; '>return</span>  mm<span style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span>
+
+    <span style='color:#e66170; font-weight:bold; '>int</span> getYear<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+        <span style='color:#e66170; font-weight:bold; '>return</span> yyyy<span style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span>
+    <span style='color:#e66170; font-weight:bold; '>void</span> setDay<span style='color:#d2cd86; '>(</span><span style='color:#e66170; font-weight:bold; '>int</span> newDay<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+        dd <span style='color:#d2cd86; '>=</span> newDay<span style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span>
+
+    <span style='color:#e66170; font-weight:bold; '>void</span> setMonth<span style='color:#d2cd86; '>(</span><span style='color:#e66170; font-weight:bold; '>int</span> newMonth<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+        mm <span style='color:#d2cd86; '>=</span> newMonth<span style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span>
+
+    <span style='color:#e66170; font-weight:bold; '>void</span> setYear <span style='color:#d2cd86; '>(</span><span style='color:#e66170; font-weight:bold; '>int</span> newYear<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+        yyyy <span style='color:#d2cd86; '>=</span> newYear<span style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span>
+<span style='color:#e34adc; '>&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#e66170; font-weight:bold; '>private</span><span style='color:#e34adc; '>:</span>
+        <span style='color:#e66170; font-weight:bold; '>int</span> dd<span style='color:#b060b0; '>{</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+        <span style='color:#e66170; font-weight:bold; '>int</span> mm<span style='color:#b060b0; '>{</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+        <span style='color:#e66170; font-weight:bold; '>int</span> yyyy<span style='color:#b060b0; '>{</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+<span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+
+<span style='color:#9999a9; '>//3.13</span>
+<span style='color:#e66170; font-weight:bold; '>class</span> Account2 <span style='color:#b060b0; '>{</span>
+<span style='color:#e34adc; '>&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#e66170; font-weight:bold; '>public</span><span style='color:#e34adc; '>:</span>
+        Account2<span style='color:#d2cd86; '>(</span><span style='color:#00dddd; '>std</span><span style='color:#b060b0; '>::</span><span style='color:#e66170; font-weight:bold; '>string</span> acctName<span style='color:#d2cd86; '>)</span><span style='color:#9999a9; '>//constructor</span>
+        <span style='color:#b060b0; '>:</span> name<span style='color:#b060b0; '>{</span>acctName<span style='color:#b060b0; '>}</span><span style='color:#d2cd86; '>,</span> balance<span style='color:#b060b0; '>{</span><span style='color:#009f00; '>0.00</span><span style='color:#b060b0; '>}</span> <span style='color:#b060b0; '>{</span><span style='color:#b060b0; '>}</span> <span style='color:#9999a9; '>//initializer list</span>
+
+        <span style='color:#00dddd; '>std</span><span style='color:#b060b0; '>::</span><span style='color:#e66170; font-weight:bold; '>string</span> getName<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#e66170; font-weight:bold; '>const</span> <span style='color:#b060b0; '>{</span> <span style='color:#9999a9; '>//const means changes cannot be made</span>
+            <span style='color:#e66170; font-weight:bold; '>return</span> name<span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+        <span style='color:#e66170; font-weight:bold; '>double</span> getBalance<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#e66170; font-weight:bold; '>const</span> <span style='color:#b060b0; '>{</span>
+            <span style='color:#e66170; font-weight:bold; '>return</span> balance<span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+        <span style='color:#e66170; font-weight:bold; '>void</span> deposit<span style='color:#d2cd86; '>(</span><span style='color:#e66170; font-weight:bold; '>double</span> depAmt<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+            <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>depAmt <span style='color:#d2cd86; '>></span> <span style='color:#009f00; '>0.00</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>{</span>
+                balance <span style='color:#d2cd86; '>+</span><span style='color:#d2cd86; '>=</span> depAmt<span style='color:#b060b0; '>;</span>
+            <span style='color:#b060b0; '>}</span>
+        <span style='color:#b060b0; '>}</span>
+        <span style='color:#e66170; font-weight:bold; '>void</span> withdraw<span style='color:#d2cd86; '>(</span><span style='color:#e66170; font-weight:bold; '>double</span> witAmt<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+            <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>witAmt <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>=</span> balance<span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>{</span>
+                balance <span style='color:#d2cd86; '>-</span><span style='color:#d2cd86; '>=</span> witAmt<span style='color:#b060b0; '>;</span>
+            <span style='color:#b060b0; '>}</span>
+                <span style='color:#e66170; font-weight:bold; '>else</span> <span style='color:#b060b0; '>{</span>
+                    <span style='color:#00dddd; '>std</span><span style='color:#b060b0; '>::</span><span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Insufficient Funds</span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#00dddd; '>std</span><span style='color:#b060b0; '>::</span><span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+                <span style='color:#b060b0; '>}</span>
+        <span style='color:#b060b0; '>}</span>
+        <span style='color:#e66170; font-weight:bold; '>string</span> displayAccount<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+
+           <span style='color:#e66170; font-weight:bold; '>return</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Account Name: </span><span style='color:#02d045; '>"</span><span style='color:#b060b0; '>;</span>
+           <span style='color:#e66170; font-weight:bold; '>return</span> name<span style='color:#b060b0; '>;</span>
+           <span style='color:#e66170; font-weight:bold; '>return</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '> Account Balance = </span><span style='color:#02d045; '>"</span> <span style='color:#b060b0; '>;</span>
+
+        <span style='color:#b060b0; '>}</span>
+
+<span style='color:#e34adc; '>&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#e66170; font-weight:bold; '>private</span><span style='color:#e34adc; '>:</span>
+        <span style='color:#00dddd; '>std</span><span style='color:#b060b0; '>::</span><span style='color:#e66170; font-weight:bold; '>string</span> name<span style='color:#b060b0; '>{</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+        <span style='color:#e66170; font-weight:bold; '>double</span> balance<span style='color:#b060b0; '>{</span><span style='color:#009f00; '>0.00</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+
+<span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+
+<span style='color:#9999a9; '>//3.9 Test</span>
+<span style='color:#e66170; font-weight:bold; '>void</span> testAccount<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+
+    Account acct01<span style='color:#b060b0; '>{</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Kevin Carman</span><span style='color:#02d045; '>"</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Account Name: </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> acct01<span style='color:#d2cd86; '>.</span>getName<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Balance = </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> acct01<span style='color:#d2cd86; '>.</span>getBalance<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    acct01<span style='color:#d2cd86; '>.</span>deposit<span style='color:#d2cd86; '>(</span><span style='color:#009f00; '>10.00</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Balance = </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> acct01<span style='color:#d2cd86; '>.</span>getBalance<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    acct01<span style='color:#d2cd86; '>.</span>withdraw<span style='color:#d2cd86; '>(</span><span style='color:#009f00; '>9.00</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Balance = </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> acct01<span style='color:#d2cd86; '>.</span>getBalance<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    acct01<span style='color:#d2cd86; '>.</span>withdraw<span style='color:#d2cd86; '>(</span><span style='color:#009f00; '>9.00</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Balance = </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> acct01<span style='color:#d2cd86; '>.</span>getBalance<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+<span style='color:#b060b0; '>}</span>
+
+<span style='color:#9999a9; '>//3.10 Test</span>
+<span style='color:#e66170; font-weight:bold; '>void</span> testInvoice<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+
+Invoice hammer<span style='color:#d2cd86; '>(</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>j55a</span><span style='color:#02d045; '>"</span><span style='color:#d2cd86; '>,</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Small Hammer</span><span style='color:#02d045; '>"</span><span style='color:#d2cd86; '>,</span> <span style='color:#008c00; '>4</span><span style='color:#d2cd86; '>,</span> <span style='color:#009f00; '>5.50</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+<span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Part Number: </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> hammer<span style='color:#d2cd86; '>.</span>getPartNo<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '> Description: </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> hammer<span style='color:#d2cd86; '>.</span>getPartDescr<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '> Quantity: </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> hammer<span style='color:#d2cd86; '>.</span>getPartQuant<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '> Unit Price: </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> hammer<span style='color:#d2cd86; '>.</span>getPartPrice<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+hammer<span style='color:#d2cd86; '>.</span>setPartDescr<span style='color:#d2cd86; '>(</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Not So Small Hammer</span><span style='color:#02d045; '>"</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+hammer<span style='color:#d2cd86; '>.</span>setPartNo<span style='color:#d2cd86; '>(</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>j55a-1</span><span style='color:#02d045; '>"</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+hammer<span style='color:#d2cd86; '>.</span>setPartPrice<span style='color:#d2cd86; '>(</span><span style='color:#009f00; '>5.99</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+hammer<span style='color:#d2cd86; '>.</span>setPartQuant<span style='color:#d2cd86; '>(</span><span style='color:#008c00; '>5</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+<span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Part Number: </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> hammer<span style='color:#d2cd86; '>.</span>getPartNo<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '> Description: </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> hammer<span style='color:#d2cd86; '>.</span>getPartDescr<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '> Quantity: </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> hammer<span style='color:#d2cd86; '>.</span>getPartQuant<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '> Unit Price: </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> hammer<span style='color:#d2cd86; '>.</span>getPartPrice<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+<span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Extended Price: $</span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> hammer<span style='color:#d2cd86; '>.</span>getInvoiceAmount<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+<span style='color:#b060b0; '>}</span>
+
+<span style='color:#9999a9; '>//3.12 Test</span>
+<span style='color:#e66170; font-weight:bold; '>void</span> testDate<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+    Date date01<span style='color:#b060b0; '>{</span><span style='color:#008c00; '>20</span><span style='color:#d2cd86; '>,</span> <span style='color:#008c00; '>67</span><span style='color:#d2cd86; '>,</span> <span style='color:#008c00; '>2020</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span> <span style='color:#9999a9; '>//pass nonsense month</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Day: </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> date01<span style='color:#d2cd86; '>.</span>getDay<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '> Month: </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> date01<span style='color:#d2cd86; '>.</span>getMonth<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '> Year: </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> date01<span style='color:#d2cd86; '>.</span>getYear<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    date01<span style='color:#d2cd86; '>.</span>setDay<span style='color:#d2cd86; '>(</span><span style='color:#008c00; '>22</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    date01<span style='color:#d2cd86; '>.</span>setMonth<span style='color:#d2cd86; '>(</span><span style='color:#008c00; '>12</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    date01<span style='color:#d2cd86; '>.</span>setYear<span style='color:#d2cd86; '>(</span><span style='color:#008c00; '>1986</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Day: </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> date01<span style='color:#d2cd86; '>.</span>getDay<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '> Month: </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> date01<span style='color:#d2cd86; '>.</span>getMonth<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '> Year: </span><span style='color:#02d045; '>"</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> date01<span style='color:#d2cd86; '>.</span>getYear<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+
+<span style='color:#b060b0; '>}</span>
+<span style='color:#9999a9; '>//</span>
+
+<span style='color:#9999a9; '>//3.13 Test</span>
+<span style='color:#e66170; font-weight:bold; '>void</span> testAccount2<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+
+    Account2 acct01<span style='color:#b060b0; '>{</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>Kevin Carman</span><span style='color:#02d045; '>"</span><span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> acct01<span style='color:#d2cd86; '>.</span>displayAccount<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    acct01<span style='color:#d2cd86; '>.</span>deposit<span style='color:#d2cd86; '>(</span><span style='color:#009f00; '>10.00</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> acct01<span style='color:#d2cd86; '>.</span>displayAccount<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    acct01<span style='color:#d2cd86; '>.</span>withdraw<span style='color:#d2cd86; '>(</span><span style='color:#009f00; '>9.00</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> acct01<span style='color:#d2cd86; '>.</span>displayAccount<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+    acct01<span style='color:#d2cd86; '>.</span>withdraw<span style='color:#d2cd86; '>(</span><span style='color:#009f00; '>9.00</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>cout</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> acct01<span style='color:#d2cd86; '>.</span>displayAccount<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>&lt;</span> <span style='color:#e66170; font-weight:bold; '>endl</span><span style='color:#b060b0; '>;</span>
+<span style='color:#b060b0; '>}</span>
+
+<span style='color:#e66170; font-weight:bold; '>int</span> <span style='color:#e66170; font-weight:bold; '>main</span><span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span>
+<span style='color:#b060b0; '>{</span>
+    testAccount<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    testInvoice<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    testDate<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    testAccount2<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+<span style='color:#b060b0; '>}</span>
+</pre>
+          <p>&nbsp;</p>
+        </div>
+</div>
+        <div id="footer"></div> 
+</body>
+</html>
