@@ -83,7 +83,7 @@ Released   : 20081222
 <span style="color: #000080">//5.30-5.35</span>
 <span style="color: #cdcd00">class</span> <span style="color: #00cdcd">DollarAmount</span><span style="color: #cccccc">{</span>
 <span style="color: #cccccc">public:</span>
-        <span style="color: #cdcd00">explicit</span> <span style="color: #cccccc">DollarAmount(</span><span style="color: #00cd00">int64_t</span> <span style="color: #cccccc">dollars)</span> <span style="color: #3399cc">:</span> <span style="color: #cccccc">dollarCents{</span><span style="color: #cd00cd">100</span> <span style="color: #3399cc">*</span> <span style="color: #cccccc">dollars}{}</span>
+        <span style="color: #cdcd00">explicit</span> <span style="color: #cccccc">DollarAmount(</span><span style="color: #00cd00">int64_t</span> <span style="color: #cccccc">dollars,</span> <span style="color: #00cd00">int64_t</span> <span style="color: #cccccc">cents)</span> <span style="color: #3399cc">:</span> <span style="color: #cccccc">wholeDollars{dollars},</span> <span style="color: #cccccc">wholeCents{cents}{}</span>
 
         <span style="color: #00cd00">void</span> <span style="color: #cccccc">add(DollarAmount</span> <span style="color: #cccccc">right){</span>
             <span style="color: #cccccc">amount</span> <span style="color: #3399cc">+=</span> <span style="color: #cccccc">right.amount;</span>
@@ -95,12 +95,12 @@ Released   : 20081222
         <span style="color: #00cd00">void</span> <span style="color: #cccccc">divide(DollarAmount</span> <span style="color: #cccccc">right){</span>
             <span style="color: #cccccc">amount</span> <span style="color: #3399cc">/=</span> <span style="color: #cccccc">right.amount;</span>
         <span style="color: #cccccc">}</span>
-        <span style="color: #000080">//5.33</span>
+        <span style="color: #000080">//5.32</span>
         <span style="color: #00cd00">void</span> <span style="color: #cccccc">addInterest(</span><span style="color: #00cd00">int64_t</span> <span style="color: #cccccc">rate,</span> <span style="color: #00cd00">int64_t</span> <span style="color: #cccccc">divisor){</span>
             <span style="color: #00cd00">int64_t</span> <span style="color: #cccccc">tempAmount{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span>
             <span style="color: #cccccc">tempAmount</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">((amount</span> <span style="color: #3399cc">*</span> <span style="color: #cccccc">rate</span> <span style="color: #3399cc">+</span> <span style="color: #cccccc">divisor</span> <span style="color: #3399cc">/</span> <span style="color: #cd00cd">2</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">/</span> <span style="color: #cccccc">divisor);</span>
-            <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(tempAmount</span> <span style="color: #3399cc">%</span> <span style="color: #cd00cd">1</span> <span style="color: #3399cc">&lt;=</span> <span style="color: #cd00cd">5</span><span style="color: #cccccc">){</span>
-                    <span style="color: #cccccc">tempAmount</span> <span style="color: #3399cc">-=</span> <span style="color: #cccccc">(tempAmount</span> <span style="color: #3399cc">%</span> <span style="color: #cd00cd">1</span><span style="color: #cccccc">);</span>
+            <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(((amount</span> <span style="color: #3399cc">*</span> <span style="color: #cccccc">rate)</span> <span style="color: #3399cc">%</span> <span style="color: #cd00cd">10</span> <span style="color: #3399cc">==</span> <span style="color: #cd00cd">5</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">&amp;&amp;</span> <span style="color: #cccccc">(((amount</span> <span style="color: #3399cc">*</span> <span style="color: #cccccc">rate)</span> <span style="color: #3399cc">%</span> <span style="color: #cd00cd">10</span> <span style="color: #cccccc">)</span> <span style="color: #3399cc">%</span> <span style="color: #cd00cd">2</span> <span style="color: #3399cc">==</span> <span style="color: #cd00cd">1</span><span style="color: #cccccc">)){</span>
+                <span style="color: #cccccc">amount</span> <span style="color: #3399cc">-=</span> <span style="color: #cd00cd">1</span><span style="color: #cccccc">;</span>
             <span style="color: #cccccc">}</span>
             <span style="color: #cccccc">amount</span> <span style="color: #3399cc">+=</span> <span style="color: #cccccc">tempAmount;</span>
         <span style="color: #cccccc">}</span>
@@ -124,8 +124,9 @@ Released   : 20081222
             <span style="color: #cdcd00">return</span> <span style="color: #cccccc">dollars</span> <span style="color: #3399cc">+</span> <span style="color: #cd0000">&quot;.&quot;</span> <span style="color: #3399cc">+</span> <span style="color: #cccccc">(cents.size()</span> <span style="color: #3399cc">==</span> <span style="color: #cd00cd">1</span> <span style="color: #3399cc">?</span> <span style="color: #cd0000">&quot;0&quot;</span> <span style="color: #3399cc">:</span> <span style="color: #cd0000">&quot;&quot;</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">+</span> <span style="color: #cccccc">cents;</span>
         <span style="color: #cccccc">}</span>
 <span style="color: #cccccc">private:</span>
-    <span style="color: #00cd00">int64_t</span> <span style="color: #cccccc">dollarCents;</span>
-    <span style="color: #00cd00">int64_t</span> <span style="color: #cccccc">amount{dollarCents};</span>
+    <span style="color: #00cd00">int64_t</span> <span style="color: #cccccc">wholeDollars;</span>
+    <span style="color: #00cd00">int64_t</span> <span style="color: #cccccc">wholeCents;</span>
+    <span style="color: #00cd00">int64_t</span> <span style="color: #cccccc">amount{wholeCents</span> <span style="color: #3399cc">+</span> <span style="color: #cccccc">(</span><span style="color: #cd00cd">100</span> <span style="color: #3399cc">*</span> <span style="color: #cccccc">wholeDollars)};</span>
 <span style="color: #cccccc">};</span>
 <span style="color: #000080">//5.34</span>
 <span style="color: #cdcd00">class</span> <span style="color: #00cdcd">Account</span> <span style="color: #cccccc">{</span>
@@ -165,8 +166,10 @@ Released   : 20081222
 <span style="color: #cccccc">};</span>
 
 <span style="color: #00cd00">void</span> <span style="color: #cccccc">dollarAmtTest(){</span>
-    <span style="color: #cccccc">DollarAmount</span> <span style="color: #cccccc">one(</span><span style="color: #cd00cd">1600</span><span style="color: #cccccc">);</span>
-    <span style="color: #cccccc">DollarAmount</span> <span style="color: #cccccc">two(</span><span style="color: #cd00cd">100</span><span style="color: #cccccc">);</span>
+    <span style="color: #cccccc">DollarAmount</span> <span style="color: #cccccc">one(</span><span style="color: #cd00cd">10</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">75</span><span style="color: #cccccc">);</span>
+    <span style="color: #cccccc">DollarAmount</span> <span style="color: #cccccc">two(</span><span style="color: #cd00cd">1</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">0</span><span style="color: #cccccc">);</span>
+    <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">one.to_String()</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+    <span style="color: #cccccc">one.addInterest(</span><span style="color: #cd00cd">5</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">100</span><span style="color: #cccccc">);</span>
     <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">one.to_String()</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
     <span style="color: #cccccc">one.add(two);</span>
     <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">one.to_String()</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
@@ -224,6 +227,8 @@ Released   : 20081222
 <span style="color: #cccccc">comoundInterest(</span><span style="color: #cd00cd">1000.00</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">0.05</span><span style="color: #cccccc">);</span>
 <span style="color: #cccccc">}</span>
 </pre></div>
+
+              </div>
 
 </div>
 
