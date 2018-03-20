@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+ <!--
+Design by Bryant Smith
+http://www.bryantsmith.com
+http://www.aszx.net
+email: template [-at-] bryantsmith [-dot-] com
+Released under Creative Commons Attribution 2.5 Generic.  In other words, do with it what you please; but please leave the link if you'd be so kind :)
+
+Name       : Green Creative
+Description: One column, with top naviagation
+Version    : 1.0
+Released   : 20081222
+-->
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="screen.css" />
+<title>Kevin Carman Github Wiki</title>
+</head>
+
+<body>
+    <div id="page">
+    
+        <div id="header">
+          <div id="headerTitle">Kevin Carman</div>
+            <div id="headerSubText">Github Wiki for CS161.</div>
+            
+        </div>
+        <div id="bar">
+          <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="homework.html">Homework</a>
+            <a href="reading.html">Reading</a>
+            <!--<a href="#">contact</a>-->
+      </div>
+        
+        <div class="contentTitle"><h1>Deitel Text Exercises, Chapter 7</h1></div>
+            <div class="contentText">
+                <!-- HTML generated using hilite.me --><div style="background: #000000; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #000080">#include &lt;iostream&gt;</span>
+<span style="color: #000080">#include &lt;string&gt;</span>
+<span style="color: #000080">#include &lt;sstream&gt;</span>
+<span style="color: #000080">#include &lt;math.h&gt;</span>
+<span style="color: #000080">#include &lt;iomanip&gt;</span>
+<span style="color: #000080">#include &lt;cmath&gt;</span>
+<span style="color: #000080">#include &lt;stdio.h&gt;</span>
+<span style="color: #000080">#include &lt;array&gt;</span>
+<span style="color: #000080">#include &lt;vector&gt;</span>
+<span style="color: #000080">#include &lt;ctime&gt;</span>
+<span style="color: #cdcd00">using</span> <span style="color: #cdcd00">namespace</span> <span style="color: #cccccc">std;</span>
+<span style="color: #cdcd00">const</span> <span style="color: #00cd00">size_t</span> <span style="color: #cccccc">MAX{</span><span style="color: #cd00cd">20</span><span style="color: #cccccc">};</span>
+<span style="color: #000080">//7.13</span>
+<span style="color: #00cd00">void</span> <span style="color: #cccccc">printArray(</span><span style="color: #cdcd00">const</span> <span style="color: #cccccc">array</span><span style="color: #3399cc">&lt;</span><span style="color: #00cd00">int</span><span style="color: #cccccc">,</span> <span style="color: #cccccc">MAX</span><span style="color: #3399cc">&gt;</span> <span style="color: #cccccc">vals){</span>
+    <span style="color: #00cd00">int</span> <span style="color: #cccccc">index{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span>
+    <span style="color: #cdcd00">for</span> <span style="color: #cccccc">(</span><span style="color: #00cd00">int</span> <span style="color: #cccccc">i</span> <span style="color: #3399cc">:</span> <span style="color: #cccccc">vals){</span>
+        <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&#39;[&#39;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">setw(</span><span style="color: #cd00cd">2</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">index</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&#39;]&#39;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">setw(</span><span style="color: #cd00cd">4</span><span style="color: #cccccc">)</span>
+            <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">i</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+        <span style="color: #cccccc">index</span> <span style="color: #3399cc">+=</span> <span style="color: #cd00cd">1</span><span style="color: #cccccc">;</span>
+    <span style="color: #cccccc">}</span>
+<span style="color: #cccccc">}</span>
+<span style="color: #00cd00">void</span> <span style="color: #cccccc">dupCheck(){</span>
+    <span style="color: #cccccc">array</span><span style="color: #3399cc">&lt;</span><span style="color: #00cd00">int</span><span style="color: #cccccc">,</span> <span style="color: #cccccc">MAX</span><span style="color: #3399cc">&gt;</span> <span style="color: #cccccc">ar1;</span>
+    <span style="color: #cccccc">srand((</span><span style="color: #00cd00">int</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">time(</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">));</span>
+    <span style="color: #cdcd00">for</span> <span style="color: #cccccc">(</span><span style="color: #00cd00">size_t</span> <span style="color: #cccccc">x{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span> <span style="color: #cccccc">x</span> <span style="color: #3399cc">&lt;</span> <span style="color: #cccccc">MAX;</span> <span style="color: #cccccc">x</span><span style="color: #3399cc">++</span><span style="color: #cccccc">){</span>
+        <span style="color: #cccccc">ar1[x]</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">(rand()</span> <span style="color: #3399cc">%</span> <span style="color: #cd00cd">90</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">+</span> <span style="color: #cd00cd">10</span><span style="color: #cccccc">;</span>
+    <span style="color: #cccccc">}</span>
+    <span style="color: #cccccc">printArray(ar1);</span>
+    <span style="color: #cdcd00">for</span> <span style="color: #cccccc">(</span><span style="color: #00cd00">size_t</span> <span style="color: #cccccc">i{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span> <span style="color: #cccccc">i</span> <span style="color: #3399cc">&lt;</span> <span style="color: #cccccc">MAX;</span> <span style="color: #cccccc">i</span><span style="color: #3399cc">++</span><span style="color: #cccccc">){</span>
+            <span style="color: #cdcd00">for</span> <span style="color: #cccccc">(</span><span style="color: #00cd00">size_t</span> <span style="color: #cccccc">j{i</span> <span style="color: #3399cc">+</span> <span style="color: #cd00cd">1</span><span style="color: #cccccc">};</span> <span style="color: #cccccc">j</span> <span style="color: #3399cc">&lt;</span> <span style="color: #cccccc">MAX;</span> <span style="color: #cccccc">j</span><span style="color: #3399cc">++</span><span style="color: #cccccc">){</span>
+                <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(ar1[i]</span> <span style="color: #3399cc">==</span> <span style="color: #cccccc">ar1[j]){</span>
+                    <span style="color: #cccccc">ar1[i]</span> <span style="color: #3399cc">+=</span><span style="color: #cd00cd">1</span><span style="color: #cccccc">;</span>
+                <span style="color: #cccccc">}</span>
+            <span style="color: #cccccc">}</span>
+    <span style="color: #cccccc">}</span>
+    <span style="color: #cccccc">printArray(ar1);</span>
+<span style="color: #cccccc">}</span>
+<span style="color: #000080">//7.18</span>
+<span style="color: #00cd00">unsigned</span> <span style="color: #00cd00">int</span> <span style="color: #cccccc">rollDice(){</span>
+
+    <span style="color: #00cd00">int</span> <span style="color: #cccccc">die1{</span><span style="color: #cd00cd">1</span> <span style="color: #3399cc">+</span> <span style="color: #cccccc">rand()</span> <span style="color: #3399cc">%</span><span style="color: #cd00cd">6</span><span style="color: #cccccc">};</span>
+    <span style="color: #00cd00">int</span> <span style="color: #cccccc">die2{</span><span style="color: #cd00cd">1</span> <span style="color: #3399cc">+</span> <span style="color: #cccccc">rand()</span> <span style="color: #3399cc">%</span><span style="color: #cd00cd">6</span><span style="color: #cccccc">};</span>
+    <span style="color: #00cd00">int</span> <span style="color: #cccccc">sum{die1</span> <span style="color: #3399cc">+</span> <span style="color: #cccccc">die2};</span>
+    <span style="color: #cdcd00">return</span> <span style="color: #cccccc">sum;</span>
+<span style="color: #cccccc">}</span>
+<span style="color: #00cd00">void</span> <span style="color: #cccccc">craps(){</span>
+    <span style="color: #00cd00">int</span> <span style="color: #cccccc">win{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span>
+    <span style="color: #00cd00">int</span> <span style="color: #cccccc">loss{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span>
+    <span style="color: #cccccc">array</span><span style="color: #3399cc">&lt;</span><span style="color: #00cd00">int</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">20</span><span style="color: #3399cc">&gt;</span> <span style="color: #cccccc">winFreq{};</span>
+    <span style="color: #cccccc">array</span><span style="color: #3399cc">&lt;</span><span style="color: #00cd00">int</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">20</span><span style="color: #3399cc">&gt;</span> <span style="color: #cccccc">loseFreq{};</span>
+    <span style="color: #00cd00">double</span> <span style="color: #cccccc">avgRoll{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span>
+    <span style="color: #cdcd00">for</span> <span style="color: #cccccc">(</span><span style="color: #00cd00">size_t</span> <span style="color: #cccccc">i{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span> <span style="color: #cccccc">i</span> <span style="color: #3399cc">&lt;=</span> <span style="color: #cd00cd">20</span><span style="color: #cccccc">;</span> <span style="color: #cccccc">i</span><span style="color: #3399cc">++</span><span style="color: #cccccc">){</span>
+        <span style="color: #cccccc">winFreq[i]</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">0</span><span style="color: #cccccc">;</span>
+        <span style="color: #cccccc">loseFreq[i]</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">0</span><span style="color: #cccccc">;</span>
+    <span style="color: #cccccc">}</span>
+    <span style="color: #cdcd00">for</span> <span style="color: #cccccc">(</span><span style="color: #00cd00">int</span> <span style="color: #cccccc">games{</span><span style="color: #cd00cd">1000</span><span style="color: #cccccc">};</span> <span style="color: #cccccc">games</span> <span style="color: #3399cc">&gt;</span> <span style="color: #cd00cd">0</span><span style="color: #cccccc">;</span> <span style="color: #cccccc">games</span><span style="color: #3399cc">--</span><span style="color: #cccccc">){</span>
+        <span style="color: #cdcd00">enum</span> <span style="color: #cdcd00">class</span> <span style="color: #00cdcd">Status</span><span style="color: #cccccc">{CONTINUE,</span> <span style="color: #cccccc">WON,</span> <span style="color: #cccccc">LOST};</span>
+        <span style="color: #cccccc">Status</span> <span style="color: #cccccc">gameStatus;</span>
+        <span style="color: #00cd00">unsigned</span> <span style="color: #00cd00">int</span> <span style="color: #cccccc">myPoint{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span>
+        <span style="color: #00cd00">unsigned</span> <span style="color: #00cd00">int</span> <span style="color: #cccccc">sumOfDice{rollDice()};</span>
+        <span style="color: #cdcd00">switch</span> <span style="color: #cccccc">(sumOfDice){</span>
+            <span style="color: #cdcd00">case</span> <span style="color: #cd00cd">7</span>:
+            <span style="color: #cdcd00">case</span> <span style="color: #cd00cd">11</span>:
+                <span style="color: #cccccc">gameStatus</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">Status</span><span style="color: #3399cc">::</span><span style="color: #cccccc">WON;</span>
+                <span style="color: #cdcd00">break</span><span style="color: #cccccc">;</span>
+            <span style="color: #cdcd00">case</span> <span style="color: #cd00cd">2</span>:
+            <span style="color: #cdcd00">case</span> <span style="color: #cd00cd">3</span>:
+            <span style="color: #cdcd00">case</span> <span style="color: #cd00cd">12</span>:
+                <span style="color: #cccccc">gameStatus</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">Status</span><span style="color: #3399cc">::</span><span style="color: #cccccc">LOST;</span>
+                <span style="color: #cdcd00">break</span><span style="color: #cccccc">;</span>
+            <span style="color: #cccccc">default:</span>
+                <span style="color: #cccccc">gameStatus</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">Status</span><span style="color: #3399cc">::</span><span style="color: #cccccc">CONTINUE;</span>
+                <span style="color: #cccccc">myPoint</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">sumOfDice;</span>
+                <span style="color: #cdcd00">break</span><span style="color: #cccccc">;</span>
+        <span style="color: #cccccc">}</span>
+        <span style="color: #00cd00">int</span> <span style="color: #cccccc">roll{</span><span style="color: #cd00cd">1</span><span style="color: #cccccc">};</span>
+            <span style="color: #cdcd00">while</span> <span style="color: #cccccc">(gameStatus</span> <span style="color: #3399cc">==</span> <span style="color: #cccccc">Status</span><span style="color: #3399cc">::</span><span style="color: #cccccc">CONTINUE){</span>
+                <span style="color: #cccccc">sumOfDice</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">rollDice();</span>
+                <span style="color: #cccccc">roll</span> <span style="color: #3399cc">+=</span> <span style="color: #cd00cd">1</span><span style="color: #cccccc">;</span>
+                <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(sumOfDice</span> <span style="color: #3399cc">==</span> <span style="color: #cccccc">myPoint){</span>
+                    <span style="color: #cccccc">gameStatus</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">Status</span><span style="color: #3399cc">::</span><span style="color: #cccccc">WON;</span>
+                <span style="color: #cccccc">}</span>
+                <span style="color: #cdcd00">else</span> <span style="color: #cccccc">{</span>
+                    <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(sumOfDice</span> <span style="color: #3399cc">==</span> <span style="color: #cd00cd">7</span><span style="color: #cccccc">){</span>
+                        <span style="color: #cccccc">gameStatus</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">Status</span><span style="color: #3399cc">::</span><span style="color: #cccccc">LOST;</span>
+                    <span style="color: #cccccc">}</span>
+                <span style="color: #cccccc">}</span>
+            <span style="color: #cccccc">}</span>
+            <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(Status</span><span style="color: #3399cc">::</span><span style="color: #cccccc">WON</span> <span style="color: #3399cc">==</span> <span style="color: #cccccc">gameStatus){</span>
+                <span style="color: #cccccc">win</span> <span style="color: #3399cc">+=</span> <span style="color: #cd00cd">1</span><span style="color: #cccccc">;</span>
+                <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(roll</span> <span style="color: #3399cc">&gt;=</span> <span style="color: #cd00cd">20</span><span style="color: #cccccc">){</span>
+                    <span style="color: #cccccc">roll</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">20</span><span style="color: #cccccc">;</span>
+                <span style="color: #cccccc">}</span>
+                <span style="color: #3399cc">++</span><span style="color: #cccccc">winFreq[roll];</span>
+            <span style="color: #cccccc">}</span>
+            <span style="color: #cdcd00">else</span> <span style="color: #cccccc">{</span>
+                <span style="color: #cccccc">loss</span> <span style="color: #3399cc">+=</span> <span style="color: #cd00cd">1</span><span style="color: #cccccc">;</span>
+                <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(roll</span> <span style="color: #3399cc">&gt;=</span> <span style="color: #cd00cd">20</span><span style="color: #cccccc">){</span>
+                    <span style="color: #cccccc">roll</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">20</span><span style="color: #cccccc">;</span>
+                <span style="color: #cccccc">}</span>
+                <span style="color: #3399cc">++</span><span style="color: #cccccc">loseFreq[roll];</span>
+            <span style="color: #cccccc">}</span>
+        <span style="color: #cccccc">}</span>
+    <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot; Roll Number &quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot; Number of Wins &quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot; Number of Losses &quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+    <span style="color: #cdcd00">for</span> <span style="color: #cccccc">(</span><span style="color: #00cd00">size_t</span> <span style="color: #cccccc">j{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span> <span style="color: #cccccc">j</span> <span style="color: #3399cc">&lt;=</span> <span style="color: #cd00cd">20</span><span style="color: #cccccc">;</span> <span style="color: #cccccc">j</span><span style="color: #3399cc">++</span><span style="color: #cccccc">){</span>
+            <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">setw(</span><span style="color: #cd00cd">9</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">j</span> <span style="color: #3399cc">+</span> <span style="color: #cd00cd">1</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">setw(</span><span style="color: #cd00cd">15</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">winFreq[j]</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">setw(</span><span style="color: #cd00cd">15</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">loseFreq[j]</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+            <span style="color: #cccccc">avgRoll</span> <span style="color: #3399cc">+=</span> <span style="color: #cccccc">(((j</span> <span style="color: #3399cc">+</span> <span style="color: #cd00cd">1</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">*</span> <span style="color: #cccccc">winFreq[j])</span> <span style="color: #3399cc">+</span> <span style="color: #cccccc">((j</span> <span style="color: #3399cc">+</span> <span style="color: #cd00cd">1</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">*</span> <span style="color: #cccccc">loseFreq[j]))</span> <span style="color: #cccccc">;</span>
+    <span style="color: #cccccc">}</span>
+    <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;Total Wins: &quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">win</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+    <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;Total Losses: &quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">loss</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+    <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;Win Percentage: &quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">(win</span> <span style="color: #3399cc">/</span> <span style="color: #cd00cd">10</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;%&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+    <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;Avg Game Length: &quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">avgRoll</span> <span style="color: #3399cc">/</span> <span style="color: #cd00cd">1000</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot; Rolls&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+<span style="color: #cccccc">}</span>
+<span style="color: #000080">//7.32</span>
+<span style="color: #cccccc">array</span><span style="color: #3399cc">&lt;</span><span style="color: #00cd00">int</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">20</span><span style="color: #3399cc">&gt;</span> <span style="color: #cccccc">minArr{</span><span style="color: #cd00cd">7</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">2</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">3</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">5</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">6</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">7</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">2</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">3</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">5</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">6</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">7</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">2</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">3</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">5</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">6</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">7</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">2</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">3</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">5</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">6</span><span style="color: #cccccc">};</span>
+<span style="color: #00cd00">int</span> <span style="color: #cccccc">minArray(array</span><span style="color: #3399cc">&lt;</span><span style="color: #00cd00">int</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">20</span><span style="color: #3399cc">&gt;</span> <span style="color: #cccccc">arr,</span> <span style="color: #00cd00">int</span> <span style="color: #cccccc">start,</span> <span style="color: #00cd00">int</span> <span style="color: #cccccc">stop){</span>
+    <span style="color: #00cd00">int</span> <span style="color: #cccccc">index{start</span> <span style="color: #3399cc">+</span> <span style="color: #cd00cd">1</span><span style="color: #cccccc">};</span>
+    <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(start</span> <span style="color: #3399cc">==</span> <span style="color: #cccccc">stop){</span>
+        <span style="color: #cdcd00">return</span> <span style="color: #cccccc">arr[start];</span>
+    <span style="color: #cccccc">}</span>
+    <span style="color: #cdcd00">else</span><span style="color: #cccccc">{</span>
+        <span style="color: #00cd00">int</span> <span style="color: #cccccc">min{arr[start]};</span>
+        <span style="color: #cdcd00">if</span><span style="color: #cccccc">(min</span> <span style="color: #3399cc">&gt;</span> <span style="color: #cccccc">arr[index]){</span>
+            <span style="color: #cccccc">min</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">arr[index];</span>
+            <span style="color: #cccccc">minArray(arr,</span> <span style="color: #cccccc">index,</span> <span style="color: #cccccc">stop);</span>
+        <span style="color: #cccccc">}</span>
+        <span style="color: #cdcd00">return</span> <span style="color: #cccccc">min;</span>
+    <span style="color: #cccccc">}</span>
+<span style="color: #cccccc">}</span>
+
+
+<span style="color: #00cd00">int</span> <span style="color: #cccccc">main()</span>
+<span style="color: #cccccc">{</span>
+   <span style="color: #cccccc">dupCheck();</span>
+   <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">minArray(minArr,</span> <span style="color: #cd00cd">0</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">19</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+   <span style="color: #cccccc">srand(time(</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">));</span>
+   <span style="color: #cccccc">craps();</span>
+<span style="color: #cccccc">}</span>
+</pre></div>
+
+
+            </div>
+
+        </div>
+
+</div>
+
+            </div>
+
+      </div>
+</div>
+        <div id="footer"></div> 
+</body>
+</html>
