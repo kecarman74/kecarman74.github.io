@@ -38,7 +38,248 @@ Released   : 20081222
       </div>
         
         <div class="contentTitle"><h1>Deitel Text Exercises, Chapter 8</h1></div>
-            
+            <!-- HTML generated using hilite.me --><div style="background: #000000; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #000080">#include &lt;iostream&gt;</span>
+<span style="color: #000080">#include &lt;string&gt;</span>
+<span style="color: #000080">#include &lt;sstream&gt;</span>
+<span style="color: #000080">#include &lt;math.h&gt;</span>
+<span style="color: #000080">#include &lt;iomanip&gt;</span>
+<span style="color: #000080">#include &lt;cmath&gt;</span>
+<span style="color: #000080">#include &lt;stdio.h&gt;</span>
+<span style="color: #000080">#include &lt;array&gt;</span>
+<span style="color: #000080">#include &lt;vector&gt;</span>
+<span style="color: #000080">#include &lt;ctime&gt;</span>
+<span style="color: #000080">#define N 70</span>
+<span style="color: #cdcd00">using</span> <span style="color: #cdcd00">namespace</span> <span style="color: #cccccc">std;</span>
+<span style="color: #000080">//8.12</span>
+<span style="color: #00cd00">int</span> <span style="color: #cccccc">randInt0To9()</span> <span style="color: #cccccc">{</span>
+    <span style="color: #00cd00">int</span> <span style="color: #cccccc">moveType{</span> <span style="color: #cccccc">rand()</span> <span style="color: #3399cc">%</span><span style="color: #cd00cd">10</span><span style="color: #cccccc">};</span>
+    <span style="color: #cdcd00">return</span> <span style="color: #cccccc">moveType;</span>
+<span style="color: #cccccc">}</span>
+<span style="color: #00cd00">void</span> <span style="color: #cccccc">printCArray(string</span><span style="color: #3399cc">*</span> <span style="color: #cccccc">ar)</span> <span style="color: #cccccc">{</span>
+
+    <span style="color: #cdcd00">for</span> <span style="color: #cccccc">(</span><span style="color: #00cd00">int</span> <span style="color: #cccccc">i{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span> <span style="color: #cccccc">i</span> <span style="color: #3399cc">&lt;</span> <span style="color: #cccccc">N;</span> <span style="color: #cccccc">i</span><span style="color: #3399cc">++</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+        <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">ar[i];</span>
+    <span style="color: #cccccc">}</span>
+<span style="color: #cccccc">}</span>
+<span style="color: #00cd00">int</span> <span style="color: #cccccc">moveTortoise()</span> <span style="color: #cccccc">{</span>
+    <span style="color: #00cd00">int</span> <span style="color: #cccccc">mover[</span><span style="color: #cd00cd">10</span><span style="color: #cccccc">]{</span><span style="color: #cd00cd">3</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">3</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">3</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">3</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">3</span><span style="color: #cccccc">,</span> <span style="color: #3399cc">-</span><span style="color: #cd00cd">6</span><span style="color: #cccccc">,</span> <span style="color: #3399cc">-</span><span style="color: #cd00cd">6</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">1</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">1</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">1</span><span style="color: #cccccc">};</span>
+    <span style="color: #00cd00">int</span> <span style="color: #cccccc">movement{mover[randInt0To9()]};</span>
+    <span style="color: #cdcd00">return</span> <span style="color: #cccccc">movement;</span>
+<span style="color: #cccccc">}</span>
+<span style="color: #00cd00">int</span> <span style="color: #cccccc">moveHare()</span> <span style="color: #cccccc">{</span>
+    <span style="color: #00cd00">int</span> <span style="color: #cccccc">mover[</span><span style="color: #cd00cd">10</span><span style="color: #cccccc">]{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">0</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">9</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">9</span><span style="color: #cccccc">,</span> <span style="color: #3399cc">-</span><span style="color: #cd00cd">9</span><span style="color: #cccccc">,</span> <span style="color: #3399cc">-</span><span style="color: #cd00cd">1</span><span style="color: #cccccc">,</span> <span style="color: #3399cc">-</span><span style="color: #cd00cd">1</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">1</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">1</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">1</span><span style="color: #cccccc">};</span>
+    <span style="color: #00cd00">int</span> <span style="color: #cccccc">movement{mover[randInt0To9()]};</span>
+    <span style="color: #cdcd00">return</span> <span style="color: #cccccc">movement;</span>
+<span style="color: #cccccc">}</span>
+<span style="color: #00cd00">void</span> <span style="color: #cccccc">tortoiseAndHareRace()</span> <span style="color: #cccccc">{</span>
+
+    <span style="color: #cccccc">string</span> <span style="color: #cccccc">race[N];</span>
+    <span style="color: #cccccc">string</span><span style="color: #3399cc">*</span> <span style="color: #cccccc">ptr{race};</span>
+    <span style="color: #00cd00">int</span> <span style="color: #cccccc">tortoisePosition{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span>
+    <span style="color: #00cd00">int</span> <span style="color: #cccccc">harePosition{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span>
+    <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;Bang!&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+    <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;And They Are Off!&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+
+    <span style="color: #cdcd00">while</span> <span style="color: #cccccc">(harePosition</span> <span style="color: #3399cc">&lt;=</span> <span style="color: #cccccc">N</span> <span style="color: #3399cc">&amp;&amp;</span> <span style="color: #cccccc">tortoisePosition</span> <span style="color: #3399cc">&lt;=</span> <span style="color: #cccccc">N)</span> <span style="color: #cccccc">{</span>
+        <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+        <span style="color: #cccccc">ptr</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">race;</span>
+        <span style="color: #cccccc">harePosition</span> <span style="color: #3399cc">+=</span> <span style="color: #cccccc">moveHare();</span>
+        <span style="color: #cccccc">tortoisePosition</span> <span style="color: #3399cc">+=</span> <span style="color: #cccccc">moveTortoise();</span>
+
+        <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(tortoisePosition</span> <span style="color: #3399cc">&lt;</span> <span style="color: #cd00cd">0</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+            <span style="color: #cccccc">tortoisePosition</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">0</span><span style="color: #cccccc">;</span>
+        <span style="color: #cccccc">}</span>
+
+        <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(harePosition</span> <span style="color: #3399cc">&lt;</span> <span style="color: #cd00cd">0</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+            <span style="color: #cccccc">harePosition</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">0</span><span style="color: #cccccc">;</span>
+        <span style="color: #cccccc">}</span>
+
+        <span style="color: #cdcd00">for</span> <span style="color: #cccccc">(</span><span style="color: #00cd00">int</span> <span style="color: #cccccc">i{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span> <span style="color: #cccccc">i</span> <span style="color: #3399cc">&lt;</span> <span style="color: #cccccc">N;</span> <span style="color: #cccccc">i</span><span style="color: #3399cc">++</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+
+            <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(i</span> <span style="color: #3399cc">==</span> <span style="color: #cccccc">harePosition</span> <span style="color: #3399cc">&amp;&amp;</span> <span style="color: #cccccc">i</span> <span style="color: #3399cc">==</span> <span style="color: #cccccc">tortoisePosition)</span> <span style="color: #cccccc">{</span>
+                <span style="color: #3399cc">*</span><span style="color: #cccccc">ptr</span> <span style="color: #3399cc">=</span> <span style="color: #cd0000">&quot;Ouch&quot;</span><span style="color: #cccccc">;</span>
+            <span style="color: #cccccc">}</span>
+
+                <span style="color: #cdcd00">else</span><span style="color: #cccccc">{</span>
+                    <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(i</span> <span style="color: #3399cc">==</span> <span style="color: #cccccc">harePosition)</span> <span style="color: #cccccc">{</span>
+                    <span style="color: #3399cc">*</span><span style="color: #cccccc">ptr</span> <span style="color: #3399cc">=</span> <span style="color: #cd0000">&quot;H&quot;</span><span style="color: #cccccc">;</span>
+                <span style="color: #cccccc">}</span>
+
+                    <span style="color: #cdcd00">else</span> <span style="color: #cccccc">{</span>
+
+                            <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(i</span> <span style="color: #3399cc">==</span> <span style="color: #cccccc">tortoisePosition)</span> <span style="color: #cccccc">{</span>
+                            <span style="color: #3399cc">*</span><span style="color: #cccccc">ptr</span> <span style="color: #3399cc">=</span> <span style="color: #cd0000">&quot;T&quot;</span><span style="color: #cccccc">;</span>
+                            <span style="color: #cccccc">}</span>
+
+                            <span style="color: #cdcd00">else</span> <span style="color: #cccccc">{</span>
+                            <span style="color: #3399cc">*</span><span style="color: #cccccc">ptr</span> <span style="color: #3399cc">=</span> <span style="color: #cd0000">&quot;=&quot;</span><span style="color: #cccccc">;</span>
+                            <span style="color: #cccccc">}</span>
+                    <span style="color: #cccccc">}</span>
+                <span style="color: #cccccc">}</span>
+                <span style="color: #cccccc">ptr</span><span style="color: #3399cc">++</span><span style="color: #cccccc">;</span>
+        <span style="color: #cccccc">}</span>
+        <span style="color: #cccccc">printCArray(race);</span>
+    <span style="color: #cccccc">}</span>
+
+    <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(tortoisePosition</span> <span style="color: #3399cc">&gt;=</span> <span style="color: #cccccc">N)</span> <span style="color: #cccccc">{</span>
+        <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;\nTortoise Wins&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+    <span style="color: #cccccc">}</span>
+
+    <span style="color: #cdcd00">else</span> <span style="color: #cccccc">{</span>
+        <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;\nHare Wins&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+    <span style="color: #cccccc">}</span>
+<span style="color: #cccccc">}</span>
+<span style="color: #000080">//8.15/8.16</span>
+<span style="color: #cdcd00">class</span> <span style="color: #00cdcd">SimpleTron</span><span style="color: #cccccc">{</span>
+    <span style="color: #cccccc">public:</span>
+
+        <span style="color: #00cd00">void</span> <span style="color: #cccccc">simpletronEntry()</span> <span style="color: #cccccc">{</span>
+
+            <span style="color: #00cd00">int</span> <span style="color: #cccccc">input{};</span>
+            <span style="color: #00cd00">int</span> <span style="color: #cccccc">instNum{};</span>
+
+            <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;*** Welcome to Simpletron! ***&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+            <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;*** Please enter your program one instruction ***&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+            <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;*** (or data word) at a time. I will type the ***&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+            <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;*** location number and a question mark (?). ***&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+            <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;*** You then type the word for that location. ***&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+            <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;*** Type the sentinel -99999 to stop entering ***&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+            <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;*** your program. ***&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+
+            <span style="color: #cdcd00">while</span> <span style="color: #cccccc">(instNum</span> <span style="color: #3399cc">&lt;</span> <span style="color: #cd00cd">100</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+                <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">instNum</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot; ? &quot;</span><span style="color: #cccccc">;</span>
+                <span style="color: #cccccc">cin</span> <span style="color: #3399cc">&gt;&gt;</span> <span style="color: #cccccc">input;</span>
+
+                <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(input</span> <span style="color: #3399cc">==</span> <span style="color: #3399cc">-</span><span style="color: #cd00cd">99999</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+                    <span style="color: #cdcd00">break</span><span style="color: #cccccc">;</span>
+                <span style="color: #cccccc">}</span>
+
+                    <span style="color: #cdcd00">else</span> <span style="color: #cccccc">{</span>
+                            <span style="color: #cdcd00">if</span> <span style="color: #cccccc">((input</span> <span style="color: #3399cc">&lt;</span> <span style="color: #3399cc">-</span><span style="color: #cd00cd">9999</span> <span style="color: #3399cc">&amp;&amp;</span> <span style="color: #cccccc">input</span> <span style="color: #3399cc">!=</span> <span style="color: #3399cc">-</span><span style="color: #cd00cd">99999</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">||</span> <span style="color: #cccccc">input</span> <span style="color: #3399cc">&gt;</span> <span style="color: #cd00cd">9999</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+                        <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;Invalid Entry, please Re-enter&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+                        <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">instNum</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot; ? &quot;</span><span style="color: #cccccc">;</span>
+                        <span style="color: #cccccc">cin</span> <span style="color: #3399cc">&gt;&gt;</span> <span style="color: #cccccc">input;</span>
+                    <span style="color: #cccccc">}</span>
+
+                    <span style="color: #cdcd00">else</span> <span style="color: #cccccc">{</span>
+                        <span style="color: #cccccc">memory[instNum]</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">input;</span>
+                        <span style="color: #cccccc">instNum</span><span style="color: #3399cc">++</span><span style="color: #cccccc">;</span>
+                    <span style="color: #cccccc">}</span>
+                <span style="color: #cccccc">}</span>
+            <span style="color: #cccccc">}</span>
+            <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;*** Program loading completed ***&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+            <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;*** Program execution begins ***&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+        <span style="color: #cccccc">}</span>
+
+        <span style="color: #00cd00">void</span> <span style="color: #cccccc">getCommand()</span> <span style="color: #cccccc">{</span>
+            <span style="color: #cdcd00">while</span> <span style="color: #cccccc">(instructionNum</span> <span style="color: #3399cc">&lt;</span> <span style="color: #cd00cd">100</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+                <span style="color: #cccccc">instructionReg</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">memory[instructionNum];</span>
+                <span style="color: #cccccc">operationCode</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">instructionReg</span> <span style="color: #3399cc">/</span> <span style="color: #cd00cd">100</span><span style="color: #cccccc">;</span>
+                <span style="color: #cccccc">operand</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">instructionReg</span> <span style="color: #3399cc">%</span> <span style="color: #cd00cd">100</span><span style="color: #cccccc">;</span>
+
+                <span style="color: #cdcd00">switch</span><span style="color: #cccccc">(operationCode)</span> <span style="color: #cccccc">{</span>
+                <span style="color: #cdcd00">case</span> <span style="color: #cd00cd">10</span>:
+                    <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;Enter Number &quot;</span><span style="color: #cccccc">;</span>
+                    <span style="color: #cccccc">cin</span> <span style="color: #3399cc">&gt;&gt;</span> <span style="color: #cccccc">memory[operand];</span>
+                    <span style="color: #cdcd00">break</span><span style="color: #cccccc">;</span>
+                <span style="color: #cdcd00">case</span> <span style="color: #cd00cd">11</span>:
+                    <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">memory[operand]</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+                    <span style="color: #cdcd00">break</span><span style="color: #cccccc">;</span>
+                <span style="color: #cdcd00">case</span> <span style="color: #cd00cd">20</span>:
+                    <span style="color: #cccccc">accumulator</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">memory[operand];</span>
+                    <span style="color: #cdcd00">break</span><span style="color: #cccccc">;</span>
+                <span style="color: #cdcd00">case</span> <span style="color: #cd00cd">21</span>:
+                    <span style="color: #cccccc">memory[operand]</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">accumulator;</span>
+                    <span style="color: #cdcd00">break</span><span style="color: #cccccc">;</span>
+                <span style="color: #cdcd00">case</span> <span style="color: #cd00cd">30</span>:
+                    <span style="color: #cccccc">accumulator</span> <span style="color: #3399cc">+=</span> <span style="color: #cccccc">memory[operand];</span>
+                    <span style="color: #cdcd00">break</span><span style="color: #cccccc">;</span>
+                <span style="color: #cdcd00">case</span> <span style="color: #cd00cd">31</span>:
+                    <span style="color: #cccccc">accumulator</span> <span style="color: #3399cc">-=</span> <span style="color: #cccccc">memory[operand];</span>
+                    <span style="color: #cdcd00">break</span><span style="color: #cccccc">;</span>
+                <span style="color: #cdcd00">case</span> <span style="color: #cd00cd">32</span>:
+                    <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(memory[operand]</span> <span style="color: #3399cc">==</span> <span style="color: #cd00cd">0</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+                        <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;*** Attempt to divide by zero ***&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+                        <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;Simpletron Go Sleep Sleep ***&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+                        <span style="color: #cccccc">instructionNum</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">100</span><span style="color: #cccccc">;</span>
+                    <span style="color: #cccccc">}</span>
+                    <span style="color: #cdcd00">else</span> <span style="color: #cccccc">{</span>
+                        <span style="color: #cccccc">accumulator</span> <span style="color: #3399cc">/=</span> <span style="color: #cccccc">memory[operand];</span>
+                        <span style="color: #cdcd00">break</span><span style="color: #cccccc">;</span>
+                    <span style="color: #cccccc">}</span>
+                <span style="color: #cdcd00">case</span> <span style="color: #cd00cd">33</span>:
+                    <span style="color: #cccccc">accumulator</span> <span style="color: #3399cc">*=</span> <span style="color: #cccccc">memory[operand];</span>
+                    <span style="color: #cdcd00">break</span><span style="color: #cccccc">;</span>
+                <span style="color: #cdcd00">case</span> <span style="color: #cd00cd">40</span>:
+                    <span style="color: #cccccc">instructionNum</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">operand;</span>
+                    <span style="color: #cdcd00">break</span><span style="color: #cccccc">;</span>
+                <span style="color: #cdcd00">case</span> <span style="color: #cd00cd">41</span>:
+                    <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(accumulator</span> <span style="color: #3399cc">&lt;</span> <span style="color: #cd00cd">0</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+                        <span style="color: #cccccc">instructionNum</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">operand;</span>
+                    <span style="color: #cccccc">}</span>
+                    <span style="color: #cdcd00">break</span><span style="color: #cccccc">;</span>
+                <span style="color: #cdcd00">case</span> <span style="color: #cd00cd">42</span>:
+                    <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(accumulator</span> <span style="color: #3399cc">==</span> <span style="color: #cd00cd">0</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+                        <span style="color: #cccccc">instructionNum</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">operand;</span>
+                    <span style="color: #cccccc">}</span>
+                    <span style="color: #cdcd00">break</span><span style="color: #cccccc">;</span>
+                <span style="color: #cdcd00">case</span> <span style="color: #cd00cd">43</span>:
+                    <span style="color: #cccccc">instructionNum</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">100</span><span style="color: #cccccc">;</span>
+            <span style="color: #cccccc">}</span>
+                <span style="color: #cccccc">instructionNum</span><span style="color: #3399cc">++</span><span style="color: #cccccc">;</span>
+            <span style="color: #cccccc">}</span>
+            <span style="color: #cccccc">memoryDump();</span>
+        <span style="color: #cccccc">}</span>
+
+        <span style="color: #00cd00">void</span> <span style="color: #cccccc">memoryDump()</span> <span style="color: #cccccc">{</span>
+            <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;Registers:&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+            <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;Accumulator&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">setw(</span><span style="color: #cd00cd">11</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">accumulator</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+            <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;instructionCounter&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">setw(</span><span style="color: #cd00cd">4</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">instructionNum</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+            <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;instructionRegister&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">setw(</span><span style="color: #cd00cd">3</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">instructionReg</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+            <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;operationCode&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">setw(</span><span style="color: #cd00cd">9</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">operationCode</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+            <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;operand&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">setw(</span><span style="color: #cd00cd">15</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">operand</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+            <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;\nMEMORY:&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">endl;</span>
+
+            <span style="color: #cdcd00">for</span> <span style="color: #cccccc">(</span><span style="color: #00cd00">int</span> <span style="color: #cccccc">i{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span> <span style="color: #cccccc">i</span> <span style="color: #3399cc">&lt;</span> <span style="color: #cd00cd">10</span><span style="color: #cccccc">;</span> <span style="color: #cccccc">i</span><span style="color: #3399cc">++</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+                <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">setw(</span><span style="color: #cd00cd">6</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">i;</span>
+            <span style="color: #cccccc">}</span>
+
+            <span style="color: #cdcd00">for</span> <span style="color: #cccccc">(</span><span style="color: #00cd00">int</span> <span style="color: #cccccc">j{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span> <span style="color: #cccccc">j</span> <span style="color: #3399cc">&lt;</span> <span style="color: #cd00cd">100</span><span style="color: #cccccc">;</span> <span style="color: #cccccc">j</span> <span style="color: #3399cc">+=</span> <span style="color: #cd00cd">10</span> <span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+                <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">noshowpos</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot;\n&quot;</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">j</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot; &quot;</span><span style="color: #cccccc">;</span>
+
+                <span style="color: #cdcd00">for</span> <span style="color: #cccccc">(</span><span style="color: #00cd00">int</span> <span style="color: #cccccc">k{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span> <span style="color: #cccccc">k</span> <span style="color: #3399cc">&lt;</span> <span style="color: #cd00cd">10</span><span style="color: #cccccc">;</span> <span style="color: #cccccc">k</span><span style="color: #3399cc">++</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+                    <span style="color: #cccccc">cout</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">showpos</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">setw(</span><span style="color: #cd00cd">5</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">setfill(</span><span style="color: #cd0000">&#39;0&#39;</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">internal</span>  <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cccccc">memory[j</span> <span style="color: #3399cc">+</span> <span style="color: #cccccc">k]</span> <span style="color: #3399cc">&lt;&lt;</span> <span style="color: #cd0000">&quot; &quot;</span><span style="color: #cccccc">;</span>
+                <span style="color: #cccccc">}</span>
+            <span style="color: #cccccc">}</span>
+        <span style="color: #cccccc">}</span>
+
+        <span style="color: #00cd00">void</span> <span style="color: #cccccc">simpletronExecute()</span> <span style="color: #cccccc">{</span>
+            <span style="color: #cccccc">simpletronEntry();</span>
+            <span style="color: #cccccc">getCommand();</span>
+        <span style="color: #cccccc">}</span>
+
+    <span style="color: #cccccc">private:</span>
+        <span style="color: #00cd00">int</span> <span style="color: #cccccc">memory[</span><span style="color: #cd00cd">100</span><span style="color: #cccccc">];</span>
+        <span style="color: #00cd00">int</span> <span style="color: #cccccc">accumulator{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span>
+        <span style="color: #00cd00">int</span> <span style="color: #cccccc">instructionNum{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span>
+        <span style="color: #00cd00">int</span> <span style="color: #cccccc">operationCode{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span>
+        <span style="color: #00cd00">int</span> <span style="color: #cccccc">operand{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span>
+        <span style="color: #00cd00">int</span> <span style="color: #cccccc">instructionReg{</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">};</span>
+<span style="color: #cccccc">};</span>
+<span style="color: #00cd00">void</span> <span style="color: #cccccc">simpletronTest()</span> <span style="color: #cccccc">{</span>
+    <span style="color: #cccccc">SimpleTron</span> <span style="color: #cccccc">simp1{};</span>
+    <span style="color: #cccccc">simp1.simpletronExecute();</span>
+
+<span style="color: #cccccc">}</span>
+<span style="color: #00cd00">int</span> <span style="color: #cccccc">main()</span>
+<span style="color: #cccccc">{</span>
+    <span style="color: #cccccc">srand(time(</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">));</span>
+    <span style="color: #cccccc">tortoiseAndHareRace();</span>
+    <span style="color: #cccccc">simpletronTest();</span>
+    <span style="color: #cdcd00">return</span> <span style="color: #cd00cd">0</span><span style="color: #cccccc">;</span>
+<span style="color: #cccccc">}</span>
+</pre></div>
+
 
 
             </div>
