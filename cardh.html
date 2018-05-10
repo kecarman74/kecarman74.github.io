@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+ <!--
+Design by Bryant Smith
+http://www.bryantsmith.com
+http://www.aszx.net
+email: template [-at-] bryantsmith [-dot-] com
+Released under Creative Commons Attribution 2.5 Generic.  In other words, do with it what you please; but please leave the link if you'd be so kind :)
+
+Name       : Green Creative
+Description: One column, with top naviagation
+Version    : 1.0
+Released   : 20081222
+-->
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="screen.css" />
+<title>Kevin Carman Github Wiki</title>
+</head>
+
+<body>
+    <div id="page">
+    
+        <div id="header">
+          <div id="headerTitle">Kevin Carman</div>
+            <div id="headerSubText">Github Wiki for CS162</div>
+            
+        </div>
+        <div id="bar">
+          <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="reading.html">Reading</a>
+            <!--<a href="#">contact</a>-->
+      </div>
+        
+        <div class="contentTitle"><h1>Main</h1></div>
+            </div>
+<!-- HTML generated using hilite.me --><div style="background: #000000; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #000080">#ifndef CARD_H</span>
+<span style="color: #000080">#define CARD_H</span>
+<span style="color: #000080">#include &lt;iostream&gt;</span>
+<span style="color: #000080">#include &lt;string&gt;</span>
+<span style="color: #000080">#include &lt;sstream&gt;</span>
+<span style="color: #000080">#include &lt;math.h&gt;</span>
+<span style="color: #000080">#include &lt;iomanip&gt;</span>
+<span style="color: #000080">#include &lt;cmath&gt;</span>
+<span style="color: #000080">#include &lt;stdio.h&gt;</span>
+<span style="color: #000080">#include &lt;array&gt;</span>
+<span style="color: #000080">#include &lt;vector&gt;</span>
+<span style="color: #000080">#include &lt;ctime&gt;</span>
+
+<span style="color: #cdcd00">using</span> <span style="color: #cdcd00">namespace</span> <span style="color: #cccccc">std;</span>
+
+<span style="color: #cdcd00">enum</span> <span style="color: #cdcd00">class</span> <span style="color: #00cdcd">Suit</span><span style="color: #cccccc">{CLUBS,</span> <span style="color: #cccccc">DIAMONDS,</span> <span style="color: #cccccc">HEARTS,</span> <span style="color: #cccccc">SPADES};</span>
+<span style="color: #cdcd00">enum</span> <span style="color: #cdcd00">class</span> <span style="color: #00cdcd">Face</span><span style="color: #cccccc">{ACE,</span> <span style="color: #cccccc">TWO,</span> <span style="color: #cccccc">THREE,</span> <span style="color: #cccccc">FOUR,</span> <span style="color: #cccccc">FIVE,</span> <span style="color: #cccccc">SIX,</span> <span style="color: #cccccc">SEVEN,</span> <span style="color: #cccccc">EIGHT,</span> <span style="color: #cccccc">NINE,</span> <span style="color: #cccccc">TEN,</span> <span style="color: #cccccc">JACK,</span> <span style="color: #cccccc">QUEEN,</span> <span style="color: #cccccc">KING};</span>
+
+<span style="color: #cdcd00">class</span> <span style="color: #00cdcd">Card</span>
+<span style="color: #cccccc">{</span>
+    <span style="color: #cccccc">public:</span>
+        <span style="color: #000080">/** Default constructor */</span>
+        <span style="color: #cdcd00">explicit</span> <span style="color: #cccccc">Card(Face</span> <span style="color: #cccccc">face</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">Face</span><span style="color: #3399cc">::</span><span style="color: #cccccc">ACE,</span> <span style="color: #cccccc">Suit</span> <span style="color: #cccccc">suit</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">Suit</span><span style="color: #3399cc">::</span><span style="color: #cccccc">SPADES);</span>
+
+        <span style="color: #cccccc">string</span> <span style="color: #cccccc">toString()</span> <span style="color: #cdcd00">const</span><span style="color: #cccccc">;</span>
+        <span style="color: #000080">/** Default destructor */</span>
+        <span style="color: #3399cc">~</span><span style="color: #cccccc">Card();</span>
+
+    <span style="color: #cccccc">private:</span>
+        <span style="color: #cccccc">Face</span> <span style="color: #cccccc">face;</span>
+        <span style="color: #cccccc">Suit</span> <span style="color: #cccccc">suit;</span>
+        <span style="color: #000080">//initialize static in cpp</span>
+        <span style="color: #cdcd00">static</span> <span style="color: #cccccc">array</span><span style="color: #3399cc">&lt;</span><span style="color: #cccccc">string,</span> <span style="color: #cd00cd">13</span><span style="color: #3399cc">&gt;</span> <span style="color: #cccccc">faces;</span>
+        <span style="color: #cdcd00">static</span> <span style="color: #cccccc">array</span><span style="color: #3399cc">&lt;</span><span style="color: #cccccc">string,</span> <span style="color: #cd00cd">4</span><span style="color: #3399cc">&gt;</span> <span style="color: #cccccc">suits;</span>
+<span style="color: #cccccc">};</span>
+
+<span style="color: #000080">#endif // CARD_H</span>
+</pre></div>
+
+
+
+            </div>
+
+        </div>
+
+</div>
+
+            </div>
+
+      </div>
+</div>
+        <div id="footer"></div> 
+</body>
+</html>

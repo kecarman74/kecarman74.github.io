@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+ <!--
+Design by Bryant Smith
+http://www.bryantsmith.com
+http://www.aszx.net
+email: template [-at-] bryantsmith [-dot-] com
+Released under Creative Commons Attribution 2.5 Generic.  In other words, do with it what you please; but please leave the link if you'd be so kind :)
+
+Name       : Green Creative
+Description: One column, with top naviagation
+Version    : 1.0
+Released   : 20081222
+-->
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="screen.css" />
+<title>Kevin Carman Github Wiki</title>
+</head>
+
+<body>
+    <div id="page">
+    
+        <div id="header">
+          <div id="headerTitle">Kevin Carman</div>
+            <div id="headerSubText">Github Wiki for CS162</div>
+            
+        </div>
+        <div id="bar">
+          <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="reading.html">Reading</a>
+            <!--<a href="#">contact</a>-->
+      </div>
+        
+        <div class="contentTitle"><h1>Main</h1></div>
+            </div>
+<!-- HTML generated using hilite.me --><div style="background: #000000; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #000080">#ifndef INTEGERSET_H</span>
+<span style="color: #000080">#define INTEGERSET_H</span>
+<span style="color: #000080">#include &lt;iostream&gt;</span>
+<span style="color: #000080">#include &lt;string&gt;</span>
+<span style="color: #000080">#include &lt;sstream&gt;</span>
+<span style="color: #000080">#include &lt;math.h&gt;</span>
+<span style="color: #000080">#include &lt;iomanip&gt;</span>
+<span style="color: #000080">#include &lt;cmath&gt;</span>
+<span style="color: #000080">#include &lt;stdio.h&gt;</span>
+<span style="color: #000080">#include &lt;array&gt;</span>
+<span style="color: #000080">#include &lt;vector&gt;</span>
+<span style="color: #000080">#include &lt;ctime&gt;</span>
+<span style="color: #cdcd00">using</span> <span style="color: #cdcd00">namespace</span> <span style="color: #cccccc">std;</span>
+
+<span style="color: #cdcd00">class</span> <span style="color: #00cdcd">IntegerSet</span>
+<span style="color: #cccccc">{</span>
+    <span style="color: #cccccc">public:</span>
+        <span style="color: #000080">/** Default constructor */</span>
+        <span style="color: #cccccc">IntegerSet();</span>
+        <span style="color: #cccccc">IntegerSet(vector</span><span style="color: #3399cc">&lt;</span><span style="color: #00cd00">int</span><span style="color: #3399cc">&gt;</span><span style="color: #cccccc">);</span>
+        <span style="color: #cccccc">IntegerSet</span> <span style="color: #cccccc">unionOfSets(</span><span style="color: #cdcd00">const</span> <span style="color: #cccccc">IntegerSet</span><span style="color: #3399cc">&amp;</span> <span style="color: #cccccc">other)</span> <span style="color: #cdcd00">const</span><span style="color: #cccccc">;</span>
+        <span style="color: #cccccc">IntegerSet</span> <span style="color: #cccccc">intersectionOfSets(</span><span style="color: #cdcd00">const</span> <span style="color: #cccccc">IntegerSet</span><span style="color: #3399cc">&amp;</span> <span style="color: #cccccc">other)</span> <span style="color: #cdcd00">const</span><span style="color: #cccccc">;</span>
+        <span style="color: #00cd00">void</span> <span style="color: #cccccc">insertElement(</span><span style="color: #00cd00">int</span><span style="color: #cccccc">);</span>
+        <span style="color: #00cd00">void</span> <span style="color: #cccccc">deleteElement(</span><span style="color: #00cd00">int</span><span style="color: #cccccc">);</span>
+        <span style="color: #cccccc">string</span> <span style="color: #cccccc">toString()</span> <span style="color: #cdcd00">const</span><span style="color: #cccccc">;</span>
+
+
+        <span style="color: #000080">/** Default destructor */</span>
+        <span style="color: #3399cc">~</span><span style="color: #cccccc">IntegerSet();</span>
+
+    <span style="color: #cccccc">private:</span>
+        <span style="color: #cccccc">array</span><span style="color: #3399cc">&lt;</span><span style="color: #00cd00">bool</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">101</span><span style="color: #3399cc">&gt;</span> <span style="color: #cccccc">setOfInts;</span>
+        <span style="color: #cccccc">vector</span><span style="color: #3399cc">&lt;</span><span style="color: #00cd00">int</span><span style="color: #3399cc">&gt;</span> <span style="color: #cccccc">init;</span>
+        <span style="color: #00cd00">void</span> <span style="color: #cccccc">intArrToBoolArr();</span>
+<span style="color: #cccccc">};</span>
+
+<span style="color: #000080">#endif // INTEGERSET_H</span>
+</pre></div>
+
+
+
+            </div>
+
+        </div>
+
+</div>
+
+            </div>
+
+      </div>
+</div>
+        <div id="footer"></div> 
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+ <!--
+Design by Bryant Smith
+http://www.bryantsmith.com
+http://www.aszx.net
+email: template [-at-] bryantsmith [-dot-] com
+Released under Creative Commons Attribution 2.5 Generic.  In other words, do with it what you please; but please leave the link if you'd be so kind :)
+
+Name       : Green Creative
+Description: One column, with top naviagation
+Version    : 1.0
+Released   : 20081222
+-->
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="screen.css" />
+<title>Kevin Carman Github Wiki</title>
+</head>
+
+<body>
+    <div id="page">
+    
+        <div id="header">
+          <div id="headerTitle">Kevin Carman</div>
+            <div id="headerSubText">Github Wiki for CS162</div>
+            
+        </div>
+        <div id="bar">
+          <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="reading.html">Reading</a>
+            <!--<a href="#">contact</a>-->
+      </div>
+        
+        <div class="contentTitle"><h1>Main</h1></div>
+            </div>
+<!-- HTML generated using hilite.me --><div style="background: #000000; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #000080">#include &quot;Card.h&quot;</span>
+<span style="color: #000080">#include &lt;iostream&gt;</span>
+<span style="color: #000080">#include &lt;string&gt;</span>
+<span style="color: #000080">#include &lt;sstream&gt;</span>
+<span style="color: #000080">#include &lt;math.h&gt;</span>
+<span style="color: #000080">#include &lt;iomanip&gt;</span>
+<span style="color: #000080">#include &lt;cmath&gt;</span>
+<span style="color: #000080">#include &lt;stdio.h&gt;</span>
+<span style="color: #000080">#include &lt;array&gt;</span>
+<span style="color: #000080">#include &lt;vector&gt;</span>
+<span style="color: #000080">#include &lt;ctime&gt;</span>
+
+<span style="color: #cdcd00">using</span> <span style="color: #cdcd00">namespace</span> <span style="color: #cccccc">std;</span>
+
+<span style="color: #cccccc">Card</span><span style="color: #3399cc">::</span><span style="color: #cccccc">Card(Face</span> <span style="color: #cccccc">cardFace,</span> <span style="color: #cccccc">Suit</span> <span style="color: #cccccc">cardSuit)</span>
+<span style="color: #3399cc">:</span> <span style="color: #cccccc">face{cardFace},</span> <span style="color: #cccccc">suit{cardSuit}</span>
+<span style="color: #cccccc">{</span>
+    <span style="color: #000080">//ctor</span>
+<span style="color: #cccccc">}</span>
+
+<span style="color: #cccccc">array</span><span style="color: #3399cc">&lt;</span><span style="color: #cccccc">string,</span> <span style="color: #cd00cd">13</span><span style="color: #3399cc">&gt;</span> <span style="color: #cccccc">Card</span><span style="color: #3399cc">::</span><span style="color: #cccccc">faces{</span><span style="color: #cd0000">&quot;Ace&quot;</span><span style="color: #cccccc">,</span> <span style="color: #cd0000">&quot;Two&quot;</span><span style="color: #cccccc">,</span> <span style="color: #cd0000">&quot;Three&quot;</span><span style="color: #cccccc">,</span> <span style="color: #cd0000">&quot;Four&quot;</span><span style="color: #cccccc">,</span> <span style="color: #cd0000">&quot;Five&quot;</span><span style="color: #cccccc">,</span> <span style="color: #cd0000">&quot;Six&quot;</span><span style="color: #cccccc">,</span> <span style="color: #cd0000">&quot;Seven&quot;</span><span style="color: #cccccc">,</span> <span style="color: #cd0000">&quot;Eight&quot;</span><span style="color: #cccccc">,</span> <span style="color: #cd0000">&quot;Nine&quot;</span><span style="color: #cccccc">,</span> <span style="color: #cd0000">&quot;Ten&quot;</span><span style="color: #cccccc">,</span> <span style="color: #cd0000">&quot;Jack&quot;</span><span style="color: #cccccc">,</span> <span style="color: #cd0000">&quot;Queen&quot;</span><span style="color: #cccccc">,</span> <span style="color: #cd0000">&quot;King&quot;</span><span style="color: #cccccc">};</span>
+<span style="color: #cccccc">array</span><span style="color: #3399cc">&lt;</span><span style="color: #cccccc">string,</span> <span style="color: #cd00cd">4</span><span style="color: #3399cc">&gt;</span> <span style="color: #cccccc">Card</span><span style="color: #3399cc">::</span><span style="color: #cccccc">suits{</span><span style="color: #cd0000">&quot;Clubs&quot;</span><span style="color: #cccccc">,</span> <span style="color: #cd0000">&quot;Diamonds&quot;</span><span style="color: #cccccc">,</span> <span style="color: #cd0000">&quot;Hearts&quot;</span><span style="color: #cccccc">,</span> <span style="color: #cd0000">&quot;Spades&quot;</span><span style="color: #cccccc">};</span>
+
+<span style="color: #cccccc">string</span> <span style="color: #cccccc">Card</span><span style="color: #3399cc">::</span><span style="color: #cccccc">toString()</span> <span style="color: #cdcd00">const</span><span style="color: #cccccc">{</span>
+    <span style="color: #cdcd00">return</span> <span style="color: #cccccc">faces[(</span><span style="color: #cdcd00">static_cast</span><span style="color: #3399cc">&lt;</span><span style="color: #00cd00">int</span><span style="color: #3399cc">&gt;</span><span style="color: #cccccc">(Card</span><span style="color: #3399cc">::</span><span style="color: #cccccc">face))]</span> <span style="color: #3399cc">+</span> <span style="color: #cd0000">&quot; of &quot;</span> <span style="color: #3399cc">+</span> <span style="color: #cccccc">suits[</span><span style="color: #cdcd00">static_cast</span><span style="color: #3399cc">&lt;</span><span style="color: #00cd00">int</span><span style="color: #3399cc">&gt;</span><span style="color: #cccccc">(Card</span><span style="color: #3399cc">::</span><span style="color: #cccccc">suit)];</span>
+<span style="color: #cccccc">}</span>
+
+
+
+
+<span style="color: #cccccc">Card</span><span style="color: #3399cc">::~</span><span style="color: #cccccc">Card()</span>
+<span style="color: #cccccc">{</span>
+    <span style="color: #000080">//dtor</span>
+<span style="color: #cccccc">}</span>
+</pre></div>
+
+
+
+            </div>
+
+        </div>
+
+</div>
+
+            </div>
+
+      </div>
+</div>
+        <div id="footer"></div> 
+</body>
+</html>
