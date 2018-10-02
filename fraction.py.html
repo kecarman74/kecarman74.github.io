@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>fraction.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #6897bb;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+fraction.py</font>
+</center></td></tr></table>
+<pre><span class="s0">#class for dealing with fractions</span>
+<span class="s2">class </span><span class="s1">Fraction:</span>
+    <span class="s0">#default constructor</span>
+    <span class="s2">def </span><span class="s1">__init__(self</span><span class="s2">, </span><span class="s1">num</span><span class="s2">, </span><span class="s1">den):</span>
+        self.num = num
+        self.den = den
+        <span class="s2">if </span><span class="s1">self.den == </span><span class="s3">0</span><span class="s1">:</span>
+            <span class="s2">raise </span><span class="s1">Exception(</span><span class="s4">'div by zero'</span><span class="s1">)</span>
+        x = self.gcd()
+        self.num = self.num // x
+        self.den = self.den // x
+        <span class="s2">if </span><span class="s1">self.den &lt; </span><span class="s3">0</span><span class="s1">:</span>
+            self.den *= -<span class="s3">1</span>
+            <span class="s1">self.num *= -</span><span class="s3">1</span>
+    <span class="s0">#greatest common divisor</span>
+    <span class="s2">def </span><span class="s1">gcd(self):</span>
+        b = self.num
+        a = self.den
+        <span class="s2">while </span><span class="s1">b != </span><span class="s3">0</span><span class="s1">:</span>
+            t = b
+            b = a % b
+            a = t
+        <span class="s2">return </span><span class="s1">a</span>
+    <span class="s0">#to string operator overload</span>
+    <span class="s2">def </span><span class="s1">__str__(self):</span>
+        <span class="s2">if </span><span class="s1">self.den == </span><span class="s3">1</span><span class="s1">:</span>
+            <span class="s2">return </span><span class="s1">str(self.num)</span>
+        <span class="s2">else</span><span class="s1">:</span>
+            <span class="s2">return </span><span class="s1">(str(self.num) + </span><span class="s4">'/' </span><span class="s1">+ str(self.den))</span>
+
+    <span class="s0">#addition of fractions operator overload</span>
+    <span class="s2">def </span><span class="s1">__add__(self</span><span class="s2">, </span><span class="s1">other):</span>
+        <span class="s2">return </span><span class="s1">Fraction(self.num * other.den + self.den * other.num</span><span class="s2">, </span><span class="s1">self.den * other.den)</span>
+
+    <span class="s0">#subtraction of fractions operator overload</span>
+    <span class="s2">def </span><span class="s1">__sub__(self</span><span class="s2">, </span><span class="s1">other):</span>
+        <span class="s2">return </span><span class="s1">Fraction(self.num * other.den - self.den * other.num</span><span class="s2">, </span><span class="s1">self.den * other.den)</span>
+
+    <span class="s0">#multiplication of fraction operator overload</span>
+    <span class="s2">def </span><span class="s1">__mul__(self</span><span class="s2">, </span><span class="s1">other):</span>
+        <span class="s2">return </span><span class="s1">Fraction(self.num * other.num</span><span class="s2">, </span><span class="s1">self.den * other.den)</span>
+
+    <span class="s0"># division of fraction operator overload</span>
+    <span class="s2">def </span><span class="s1">__floordiv__(self</span><span class="s2">, </span><span class="s1">other):</span>
+        <span class="s2">return </span><span class="s1">Fraction(self.num * other.den</span><span class="s2">, </span><span class="s1">self.den * other.num)</span>
+
+    <span class="s0">#greater than operator overload</span>
+    <span class="s2">def </span><span class="s1">__gt__(self</span><span class="s2">, </span><span class="s1">other):</span>
+        <span class="s2">if </span><span class="s1">(self.num / self.den) &gt; (other.num / other.den):</span>
+            <span class="s2">return True</span>
+        else<span class="s1">:</span>
+            <span class="s2">return False</span>
+
+    <span class="s0"># greater than or equal to operator overload</span>
+    <span class="s2">def </span><span class="s1">__ge__(self</span><span class="s2">, </span><span class="s1">other):</span>
+        <span class="s2">if </span><span class="s1">(self.num / self.den) &gt;= (other.num / other.den):</span>
+            <span class="s2">return True</span>
+        else<span class="s1">:</span>
+            <span class="s2">return False</span>
+
+    <span class="s0"># less than operator overload</span>
+    <span class="s2">def </span><span class="s1">__lt__(self</span><span class="s2">, </span><span class="s1">other):</span>
+        <span class="s2">if </span><span class="s1">(self.num / self.den) &lt; (other.num / other.den):</span>
+            <span class="s2">return True</span>
+        else<span class="s1">:</span>
+            <span class="s2">return False</span>
+
+    <span class="s0"># less than or equal to than operator overload</span>
+    <span class="s2">def </span><span class="s1">__ge__(self</span><span class="s2">, </span><span class="s1">other):</span>
+        <span class="s2">if </span><span class="s1">(self.num / self.den) &lt;= (other.num / other.den):</span>
+            <span class="s2">return True</span>
+        else<span class="s1">:</span>
+            <span class="s2">return False</span></pre>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6897bb;}
+.s3 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0">from </span><span class="s1">fraction </span><span class="s0">import </span><span class="s1">Fraction</span>
+
+w = Fraction(<span class="s2">14</span><span class="s0">,</span><span class="s2">16</span><span class="s1">)</span>
+x = Fraction(<span class="s2">1</span><span class="s0">,</span><span class="s2">2</span><span class="s1">)</span>
+a = Fraction(<span class="s2">3</span><span class="s0">,</span><span class="s2">2</span><span class="s1">)</span>
+y = Fraction(<span class="s2">42</span><span class="s0">,</span><span class="s2">56</span><span class="s1">)</span>
+z = Fraction(<span class="s2">7</span><span class="s0">,</span><span class="s2">8</span><span class="s1">)</span>
+
+print(y + z)
+
+print(x - a)
+
+print(x * a)
+
+print(x // a)
+
+print(y &gt; z)
+
+print(w &gt;= z)
+
+print(y &lt; z)
+
+print(y &lt;= z)
+
+<span class="s0">try</span><span class="s1">:</span>
+    w = Fraction(<span class="s2">1</span><span class="s0">,</span><span class="s2">0</span><span class="s1">)</span>
+<span class="s0">except</span><span class="s1">:</span>
+    print(<span class="s3">&quot;oops&quot;</span><span class="s1">)</span></pre>
+</body>
+</html>
